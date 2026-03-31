@@ -15,11 +15,11 @@ website:
       - text: "GR"
         href: index-gr.qmd
       - icon: github
-        href: https://github.com/BiodataAnalysisGroup/OSPO_CERTH
+        href: https://github.com/ospo-certh/OSPO_CERTH
         
   page-footer: 
     border: true
-    left: "[License](https://github.com/BiodataAnalysisGroup/OSPO_CERTH/blob/main/LICENSE)"
+    left: "[License](https://github.com/ospo-certh/OSPO_CERTH/blob/main/LICENSE)"
 
 editor: source
 
