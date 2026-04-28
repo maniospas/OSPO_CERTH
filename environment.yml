@@ -1,0 +1,5 @@
+name: ospo-certh
+channels:
+  - conda-forge
+dependencies:
+  - quarto>=1.7
