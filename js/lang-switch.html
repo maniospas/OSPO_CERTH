@@ -27,6 +27,8 @@
   };
 
   // ── Update every relevant navbar link ─────────────────────────────────────
+  var homeLink = null;
+  var docsLink = null;
   document.querySelectorAll('.navbar-nav a.nav-link').forEach(function (a) {
     var span = a.querySelector('.menu-text');
     if (!span) return;
@@ -42,10 +44,29 @@
     } else if (text === 'Home' || text === 'Αρχική') {
       a.href = isGR ? targets.home.gr : targets.home.en;
       span.textContent = isGR ? 'Αρχική' : 'Home';
+      homeLink = a;
     } else if (text === 'Technical Documentation' || text === 'Τεχνική Τεκμηρίωση') {
       a.href = isGR ? targets.docs.gr : targets.docs.en;
       span.textContent = isGR ? 'Τεχνική Τεκμηρίωση' : 'Technical Documentation';
+      docsLink = a;
     }
   });
+
+  // ── Fix navbar active state after rewriting hrefs ─────────────────────────
+  var onDocs = path.indexOf('/docs-gr/') !== -1 || path.indexOf('/docs/') !== -1;
+
+  function setActive(link, active) {
+    if (!link) return;
+    if (active) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
+  }
+
+  setActive(homeLink, !onDocs);
+  setActive(docsLink, onDocs);
 })();
 </script>
