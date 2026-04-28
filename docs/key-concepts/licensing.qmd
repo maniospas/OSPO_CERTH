@@ -1,0 +1,65 @@
+---
+title: "Licensing"
+toc: true
+---
+
+Choosing a licence is one of the most important steps in open-sourcing a project. It is a choice you
+make initially that affects the project life-cycle and adoption outside of CERTH.
+
+## The Purpose of a Licence
+
+Open-sourcing a project reverses the default "all rights reserved" model of copyright. A licence
+formally communicates the rights that you, as a copyright holder, grant to others for the use of your
+work. Without a licence, others have no legal right to use, copy, modify, or distribute your code,
+even if it is publicly visible on a repository hosting platform.
+
+Licence selection significantly influences a project's lifecycle and its external adoption.
+
+## Software licensing
+
+The procedure for choosing a licence for CERTH-developed software is defined in the
+[licensing recommendations](../recommendations/licensing.qmd) section. In general, there are many
+good open-source licences and the choice of licence will depend on what you want to achieve. The
+three main classes of licence are:
+
+* Permissive licences;
+* Weakly-reciprocal licences;
+* Strongly-reciprocal licences.
+
+### Permissive licences
+
+Examples: [Apache-2.0](https://opensource.org/license/apache-2-0/),
+[BSD-3-Clause](https://opensource.org/license/bsd-3-clause/), [MIT](https://opensource.org/license/mit/).
+
+If you license your code under this type of licence, then anybody can take it, change it or combine
+with it as they wish and distribute the result also as they wish. They just have to respect basic
+conditions, such as including your copyright notice in the software they distribute. Among the
+freedoms you grant when you use a permissive licence is the freedom to modify your software and not
+distribute it as open source, i.e. to make it proprietary.
+
+This is a good licence family if you want to allow others (e.g. a company) to use (or even modify)
+your software in a proprietary product, without releasing any sources.
+
+### Weakly-reciprocal licences
+
+Examples: [LGPL-3.0](https://opensource.org/license/lgpl-3-0/),
+[LGPL-2.1](https://opensource.org/license/lgpl-2-1/), [MPL-2.0](https://opensource.org/license/mpl-2-0/).
+
+If you license your project under this type of licence and somebody takes your code and combines it
+with theirs, upon distribution they do not have to disclose their own sources, just yours, whether or
+not they have modified them, and under the same licence you used.
+
+This is a good licence family if you want to benefit from improvements to your code but do not want
+to force the users of your code to disclose their own sources.
+
+### Strongly-reciprocal licences
+
+Examples: [GPL-3.0](https://opensource.org/license/gpl-3-0/) and
+[GPL-2.0](https://opensource.org/license/gpl-2-0/).
+
+If you license your project under this type of licence and somebody uses your code and combines it
+with theirs, they will need to release the sources of both your code (modified or not) and their
+code.
+
+The vision of the creators of the GPL was to generate an ever-growing body of free
+software by forcing/inviting users of your code to release theirs as well.

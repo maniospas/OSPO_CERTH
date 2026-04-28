@@ -1,0 +1,29 @@
+---
+title: "Due Diligence"
+toc: true
+---
+
+## Introduction to Due diligence
+
+Due diligence is a legal term describing the process of compliance and risk analysis. In the context
+of open source, the term is often used in a broader sense, to also consider risks to an
+organisation’s reputation and liability.
+
+At CERTH, due diligence should be performed before open-sourcing a project and revisited as the
+project evolves.
+
+The features of a due diligence analysis depend heavily on the nature of the project, but may
+include:
+
+* Identifying the authors of the project in order to ascertain the copyright holders.
+* Determining the use and risk of dependencies, to prevent, for instance, the use of unmaintained or
+  otherwise unwanted dependencies for reasons such as licence incompatibility.
+* Assessing the security and reputational risks associated with the project, to prevent, for
+  instance, the creation of new attack vectors and their public coverage.
+* Clearing potential liability concerns, for instance export controls, dual-use concerns, or
+  regulated application domains.
+* Reviewing the code / design, to prevent, for instance, reputational damage due to publishing
+  something of inadequate quality.
+
+Due diligence features evolve through the lifetime of a project and should be re-assessed on a
+regular basis.

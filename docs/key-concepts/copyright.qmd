@@ -1,0 +1,28 @@
+---
+title: "Copyright"
+toc: true
+---
+
+## Introduction to Copyright
+
+Copyright represents a collection of exclusive rights held by creators over their original works,
+including authority over how their creations are utilised and distributed.
+
+The general principles related to copyright are specified in the Berne Convention, an international treaty 
+which has been ratified by the vast majority of countries in the world and whose main purpose is to provide 
+uniformity of copyright and similar rights across the globe.
+
+By default, copyright functions under an "all rights reserved" model, restricting others from accessing,
+copying, modifying, or sharing work without explicit authorisation. Licences serve as the mechanism to
+grant these permissions.
+
+## Copyright at CERTH
+
+At CERTH, employed personnel (including permanent researchers, engineers, and affiliated staff)
+typically have the works produced within the scope of their professional activities held by their
+respective CERTH Institute as the copyright owner, in accordance with Greek employment and
+intellectual property law.
+
+Before publishing any work that incorporates third-party contributions, securing signed agreements or
+valid licences from the relevant copyright holders is essential. This applies equally to code,
+documentation, datasets, and design files.

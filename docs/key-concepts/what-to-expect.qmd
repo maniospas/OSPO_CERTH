@@ -1,0 +1,51 @@
+---
+title: "What to Expect"
+toc: true
+---
+
+Open-sourcing software, hardware, and other research outputs comes with benefits and opportunities
+for contributions, but it also adds expectations from the community. This section gives an overview
+of common challenges and opportunities when open-sourcing a CERTH project.
+
+## Increased Visibility and Recognition
+
+By open-sourcing your project, you publish your work for everyone to see and benefit from. This is
+an opportunity to share your work, collaborate, and engage with users and potential contributors
+(both inside and outside the academic and research community), and to attract new developers and
+designers to the project.
+
+## Maintenance and Support
+
+Once a project is open source, it is expected to allocate resources for ongoing maintenance and
+support. This includes addressing bug reports, reviewing and merging contributions, and ensuring the
+overall health of the project. Especially with contributions from short-term personnel (PhD
+students, post-docs, project staff), a clear succession plan should be established in case the main
+contributor leaves CERTH. Content moderation of comments or code contributions may also be required.
+
+## Use of Proprietary Tooling
+
+Some of the tools used for development, simulation, or hardware design may be proprietary or
+licence-restricted. People outside CERTH may not have access to these tools, and users may ask for
+changes in the tooling, libraries, or other components in order to reproduce your work and
+contribute to the project. It is good to keep these possibilities in mind when estimating the
+maintenance effort.
+
+## Evolving Project Direction
+
+Over time, and especially with multiple contributors, the project may evolve in directions you might
+not have anticipated. This includes contributions far beyond the originally devised scope, or
+conflicting contributions. As a project owner or maintainer, you need to balance your own needs with
+those of the community, and in case of conflicts, remain flexible.
+
+## Licensing and Other Legal Considerations
+
+Open-sourcing involves legal considerations. Guidance on important subjects such as licensing and
+copyright is provided in the [Recommendations](../recommendations/licensing.qmd) section.
+
+## Risks and Dual Use
+
+As the project is publicly accessible, this could invite scrutiny in terms of copyright, use of
+other libraries, and general legal risks. This is described in more detail within the
+[Due Diligence](due-diligence.qmd) section. One specific issue is the possibility of dual use. If the
+technology of the project could be used in sensitive industries such as defence, we recommend
+reaching out to the CERTH OSPO to investigate on a per-project basis.
