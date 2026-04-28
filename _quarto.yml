@@ -14,8 +14,6 @@ website:
     right:
       - text: "EN"
         href: index.qmd
-      - text: "GR"
-        href: index-gr.qmd
       - icon: github
         href: https://github.com/ospo-certh/OSPO_CERTH
 
@@ -48,6 +46,34 @@ website:
             - text: "Overview"
               href: docs/project/index.qmd
 
+    - id: docs-gr
+      title: "Τεχνική Τεκμηρίωση"
+      style: "docked"
+      background: light
+      contents:
+        - text: "CERTH OSPO Τεχνική Τεκμηρίωση"
+          href: docs-gr/index.qmd
+        - section: "Βασικές Έννοιες"
+          contents:
+            - text: "Πνευματικά Δικαιώματα"
+              href: docs-gr/key-concepts/copyright.qmd
+            - text: "Αδειοδότηση"
+              href: docs-gr/key-concepts/licensing.qmd
+            - text: "Δέουσα Επιμέλεια"
+              href: docs-gr/key-concepts/due-diligence.qmd
+            - text: "Τι να Περιμένετε"
+              href: docs-gr/key-concepts/what-to-expect.qmd
+        - section: "Συστάσεις"
+          contents:
+            - text: "Πνευματικά Δικαιώματα"
+              href: docs-gr/recommendations/copyright.qmd
+            - text: "Αδειοδότηση"
+              href: docs-gr/recommendations/licensing.qmd
+        - section: "Έργο"
+          contents:
+            - text: "Επισκόπηση"
+              href: docs-gr/project/index.qmd
+
   bread-crumbs: false
 
   page-footer:
@@ -61,6 +87,8 @@ format:
     theme: [morph, sass/theme-light.scss]
     fig-format: svg
     toc: false
+    include-in-header: js/lang-init.html
+    include-after-body: js/lang-switch.html
 
 knitr:
   opts_chunk:
