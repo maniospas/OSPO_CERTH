@@ -1,0 +1,34 @@
+---
+title: "Technical Documentation"
+toc: false
+---
+
+Are you a researcher or developer at CERTH thinking of diving into the open-source world, or do you have
+inquiries regarding your open-source software or hardware designs?
+
+This documentation covers the essential topics you need to know before and after open-sourcing a project
+at CERTH: copyright, licensing, due diligence, and best practices for a successful and sustainable
+open-source release.
+
+## What you will find here
+
+- **Key Concepts** — foundational knowledge on copyright, licensing, due diligence, and what the
+  open-sourcing process looks like at CERTH.
+- **Recommendations** — concrete, actionable guidance on how to apply copyright notices, choose a
+  licence, and structure your project for publication.
+- **Project** — space for ongoing and future CERTH OSPO initiatives.
+
+## Getting started
+
+If you are releasing a project for the first time, a recommended reading order is:
+
+1. [Copyright](key-concepts/copyright.qmd) — understand who owns what
+2. [Licensing](key-concepts/licensing.qmd) — choose the right terms for sharing
+3. [Due Diligence](key-concepts/due-diligence.qmd) — check what needs to be verified before going public
+4. [What to Expect](key-concepts/what-to-expect.qmd) — a walkthrough of the release process at CERTH
+
+For detailed implementation guidance, see the [Recommendations](recommendations/copyright.qmd) section.
+
+## Contact
+
+Have questions not covered here? Reach out to the CERTH OSPO team at **ospo@certh.gr**.

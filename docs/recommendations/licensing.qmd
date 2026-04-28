@@ -1,0 +1,78 @@
+---
+title: "Licensing"
+toc: true
+---
+
+## Overview
+
+CERTH's Open Science commitments, aligned with the
+[European Open Science Cloud (EOSC)](https://eosc.eu/) and Horizon Europe requirements, encourage
+making software developed in the course of publicly funded research available as open source wherever
+possible.
+
+Licence selection should involve a consultation with the CERTH OSPO. When selecting a licence,
+consider:
+
+- **Community norms** within your ecosystem
+- **Which sharing regime** (permissive, weakly-reciprocal, or strongly-reciprocal) aligns with your
+  project's objectives
+- **Obligations imposed by your funding body** or consortium agreement
+
+The CERTH OSPO team is available at **ospo@certh.gr** for guidance.
+
+## Licensing Software
+
+Use a licence approved by the [Open Source Initiative (OSI)](https://opensource.org/licenses) for
+CERTH-copyrighted software. Common choices:
+
+| Licence | Type | Typical use case |
+|---|---|---|
+| Apache-2.0 | Permissive | General software; maximum adoption; includes patent grant |
+| MIT | Permissive | Small utilities and libraries; minimal requirements |
+| GPL-3.0 | Strongly reciprocal | Tools where all derivatives must remain open source |
+| LGPL-3.0 | Weakly reciprocal | Libraries intended to be linked from proprietary software |
+| EUPL-1.2 | Weakly reciprocal | EU public-sector software; compatible with GPL and AGPL |
+
+The **EUPL-1.2** is worth particular attention for CERTH projects. It was designed for European public
+bodies, is legally valid across all EU member states, and is explicitly compatible with the GPL-2.0,
+GPL-3.0, and AGPL-3.0, as well as the EUPL itself.
+
+## Licensing Documentation
+
+Per the European Open Access mandate and EOSC principles, the recommended licence for documentation
+and written outputs is [Creative Commons Attribution 4.0 (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+This allows broad reuse with attribution and is accepted by most research funders, including the
+European Research Council (ERC) and Horizon Europe.
+
+## Licensing Datasets
+
+For datasets, consider:
+
+- **CC0 1.0** — public domain dedication; no restrictions on reuse; preferred when maximum data
+  sharing is the goal
+- **CC-BY 4.0** — attribution required; appropriate when institutional credit is important
+
+Be aware that some datasets may contain personal data subject to GDPR. Consult CERTH's Data
+Protection Officer before releasing datasets that could contain or be derived from personal
+information.
+
+## Multiple Licences in One Project
+
+Projects that combine software, documentation, and data assets will typically carry multiple licences
+— one per component type. The REUSE specification makes this manageable by allowing per-file licence
+declarations rather than a single project-wide licence. See the
+[Copyright recommendations](copyright.qmd) page for implementation details.
+
+## Licence Compatibility
+
+When combining components under different licences, compatibility must be verified before release.
+A common compatibility matrix:
+
+| You want to use... | Under Apache-2.0 | Under MIT | Under GPL-3.0 |
+|---|---|---|---|
+| Apache-2.0 code | ✓ | ✓ | ✓ |
+| MIT code | ✓ | ✓ | ✓ |
+| GPL-3.0 code | Only if your project is also GPL-3.0 | Only if your project is also GPL-3.0 | ✓ |
+| LGPL-3.0 library | ✓ (dynamic linking) | ✓ (dynamic linking) | ✓ |
+
+When in doubt, the CERTH OSPO can review your dependency graph and advise on compatibility.

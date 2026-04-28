@@ -1,0 +1,73 @@
+---
+title: "Due Diligence"
+toc: true
+---
+
+## What Is Due Diligence?
+
+Due diligence is a process of compliance and risk analysis carried out before and throughout the
+lifetime of an open-source project. In open-source contexts, this concept extends beyond legal
+considerations to encompass organisational reputation, security, and ethical responsibility.
+
+At CERTH, performing due diligence before releasing a project protects the individual researcher, the
+Institute, and the wider CERTH organisation.
+
+## Key Analysis Components
+
+### Author and Copyright Identification
+
+Determine who created each component of the project to establish proper copyright ownership. This
+includes:
+
+- Identifying all contributors and their affiliation at the time of contribution
+- Locating any third-party code, assets, or data that may have been incorporated
+- Verifying that the licence of each third-party component is compatible with the intended project
+  licence
+
+### Dependency Assessment
+
+Evaluate all dependencies before release. Problematic selections include:
+
+- **Unmaintained or abandoned libraries** with known, unpatched security vulnerabilities
+- **Licence-incompatible dependencies** that could impose unwanted obligations on your project's licence
+- **Dependencies subject to export controls** or other legal restrictions
+
+Tools such as [FOSSA](https://fossa.com/), [REUSE](https://reuse.software/), and
+[OSV-Scanner](https://google.github.io/osv-scanner/) can automate much of this analysis.
+
+### Security and Reputation Review
+
+Identify potential security vulnerabilities before making the project public. A security review
+protects not only the users of the software but also CERTH's reputation as a responsible research
+institution. Key checks include:
+
+- Scanning for hardcoded credentials, API keys, or internal infrastructure details
+- Reviewing the codebase for known vulnerability patterns
+- Ensuring no sensitive internal data or personally identifiable information (PII) is included in the
+  commit history
+
+### Quality Evaluation
+
+Conduct a code and documentation review to ensure the project meets a baseline quality standard.
+Publishing poorly documented or broken software reflects on CERTH as an institution. At minimum, a
+project should include:
+
+- A `README` with a clear description, installation instructions, and usage examples
+- A `LICENSE` file containing the full licence text
+- A `CONTRIBUTING` guide if external contributions are welcome
+
+The CERTH OSPO can help connect researchers with reviewers and provide a checklist prior to release.
+
+### Ethical and Legal Considerations
+
+Consider whether the project could be misused and whether its publication could raise ethical concerns.
+CERTH researchers are expected to follow the
+[European Code of Conduct for Research Integrity](https://allea.org/code-of-conduct/) and applicable
+EU regulations (e.g., AI Act, GDPR) when releasing software.
+
+## Due Diligence Is an Ongoing Process
+
+Due diligence features evolve through the lifetime of a project and should be re-assessed on a regular
+basis. Dependency vulnerabilities emerge, licences change, and new contributors bring new copyright
+considerations. Treat due diligence as a continuous responsibility, not a one-time gate before
+publication.

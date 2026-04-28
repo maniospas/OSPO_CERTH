@@ -8,16 +8,49 @@ website:
     left:
       - href: index.qmd
         text: Home
-      
-    right: 
+      - href: docs/index.qmd
+        text: Technical Documentation
+
+    right:
       - text: "EN"
         href: index.qmd
       - text: "GR"
         href: index-gr.qmd
       - icon: github
         href: https://github.com/ospo-certh/OSPO_CERTH
-        
-  page-footer: 
+
+  sidebar:
+    - id: docs
+      title: "Technical Documentation"
+      style: "docked"
+      background: light
+      contents:
+        - text: "CERTH OSPO Technical Documentation"
+          href: docs/index.qmd
+        - section: "Key Concepts"
+          contents:
+            - text: "Copyright"
+              href: docs/key-concepts/copyright.qmd
+            - text: "Licensing"
+              href: docs/key-concepts/licensing.qmd
+            - text: "Due Diligence"
+              href: docs/key-concepts/due-diligence.qmd
+            - text: "What to Expect"
+              href: docs/key-concepts/what-to-expect.qmd
+        - section: "Recommendations"
+          contents:
+            - text: "Copyright"
+              href: docs/recommendations/copyright.qmd
+            - text: "Licensing"
+              href: docs/recommendations/licensing.qmd
+        - section: "Project"
+          contents:
+            - text: "Overview"
+              href: docs/project/index.qmd
+
+  bread-crumbs: false
+
+  page-footer:
     border: true
     left: "[License](https://github.com/ospo-certh/OSPO_CERTH/blob/main/LICENSE)"
 
