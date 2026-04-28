@@ -3,65 +3,63 @@ title: "Licensing"
 toc: true
 ---
 
+Choosing a licence is one of the most important steps in open-sourcing a project. It is a choice you
+make initially that affects the project life-cycle and adoption outside of CERTH.
+
 ## The Purpose of a Licence
 
 Open-sourcing a project reverses the default "all rights reserved" model of copyright. A licence
 formally communicates the rights that you, as a copyright holder, grant to others for the use of your
-work. Without a licence, others have no legal right to use, copy, modify, or distribute your code —
+work. Without a licence, others have no legal right to use, copy, modify, or distribute your code,
 even if it is publicly visible on a repository hosting platform.
 
 Licence selection significantly influences a project's lifecycle and its external adoption.
 
-## Software Licence Categories
+## Software licensing
 
-Three primary software licence categories exist:
+The procedure for choosing a licence for CERTH-developed software is defined in the
+[licensing recommendations](../recommendations/licensing.qmd) section. In general, there are many
+good open-source licences and the choice of licence will depend on what you want to achieve. The
+three main classes of licence are:
 
-**Permissive Licences** (Apache-2.0, BSD-3-Clause, MIT)
-: Recipients may modify, combine, and distribute code freely, including in proprietary products,
-  requiring only basic conditions such as copyright attribution. These licences maximise adoption and are
-  the most common choice in academic and research software.
+* Permissive licences;
+* Weakly-reciprocal licences;
+* Strongly-reciprocal licences.
 
-**Weakly-Reciprocal Licences** (LGPL-3.0, LGPL-2.1, MPL-2.0)
-: Derivative distributions must disclose the original code under the same licence, but users of the
-  derivative work are not required to open their own sources. Suitable for libraries intended to be used
-  from proprietary software.
+### Permissive licences
 
-**Strongly-Reciprocal Licences** (GPL-3.0, GPL-2.0)
-: Anyone who combines this licensed code with other code must release all sources — both the original
-  and the derivative — under the same licence. Ensures that all improvements remain in the open-source
-  commons.
+Examples: [Apache-2.0](https://opensource.org/license/apache-2-0/),
+[BSD-3-Clause](https://opensource.org/license/bsd-3-clause/), [MIT](https://opensource.org/license/mit/).
 
-## Choosing a Licence
+If you license your code under this type of licence, then anybody can take it, change it or combine
+with it as they wish and distribute the result also as they wish. They just have to respect basic
+conditions, such as including your copyright notice in the software they distribute. Among the
+freedoms you grant when you use a permissive licence is the freedom to modify your software and not
+distribute it as open source, i.e. to make it proprietary.
 
-The choice of licence should reflect:
+This is a good licence family if you want to allow others (e.g. a company) to use (or even modify)
+your software in a proprietary product, without releasing any sources.
 
-- **Community norms** within your technology domain (e.g., most scientific Python tools use permissive
-  licences; many Linux ecosystem tools use GPL)
-- **Desired sharing regime** — whether you want to maximise adoption (permissive) or ensure that
-  improvements are always shared back (reciprocal)
-- **Institutional or project-level policies** set by CERTH or the funding body of your project (e.g.,
-  Horizon Europe projects are encouraged to use open licences)
-- **Consortium obligations** — multi-partner projects may have agreed-upon licence constraints in their
-  grant agreement
+### Weakly-reciprocal licences
 
-When in doubt, consult the CERTH OSPO before publishing.
+Examples: [LGPL-3.0](https://opensource.org/license/lgpl-3-0/),
+[LGPL-2.1](https://opensource.org/license/lgpl-2-1/), [MPL-2.0](https://opensource.org/license/mpl-2-0/).
 
-## Documentation Licences
+If you license your project under this type of licence and somebody takes your code and combines it
+with theirs, upon distribution they do not have to disclose their own sources, just yours, whether or
+not they have modified them, and under the same licence you used.
 
-For documentation and written outputs, the recommended licence family is **Creative Commons**.
-[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) allows broad reuse with attribution and
-aligns with European Open Science principles and most research funders' requirements, including the
-European Research Council (ERC) and Horizon Europe.
+This is a good licence family if you want to benefit from improvements to your code but do not want
+to force the users of your code to disclose their own sources.
 
-For datasets, consider [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain
-dedication) or CC-BY 4.0, depending on whether attribution is required by your institution or funder.
+### Strongly-reciprocal licences
 
-## European Context
+Examples: [GPL-3.0](https://opensource.org/license/gpl-3-0/) and
+[GPL-2.0](https://opensource.org/license/gpl-2-0/).
 
-The [EUPL-1.2](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12) (European Union Public
-Licence) is worth particular attention for CERTH projects. It was designed for European public bodies
-and is explicitly compatible with several major copyleft licences including the GPL and AGPL, making it
-a natural choice when interoperability with other European public-sector software is a priority.
+If you license your project under this type of licence and somebody uses your code and combines it
+with theirs, they will need to release the sources of both your code (modified or not) and their
+code.
 
-See the [Licensing Recommendations](../recommendations/licensing.qmd) page for concrete guidance on
-which licence to choose for your specific project type.
+The vision of the creators of the GPL was to generate an ever-growing body of free
+software by forcing/inviting users of your code to release theirs as well.

@@ -3,73 +3,49 @@ title: "What to Expect"
 toc: true
 ---
 
-## What to Expect When Open-Sourcing a CERTH Project
+Open-sourcing software, hardware, and other research outputs comes with benefits and opportunities
+for contributions, but it also adds expectations from the community. This section gives an overview
+of common challenges and opportunities when open-sourcing a CERTH project.
 
-Open-sourcing a project at CERTH is a rewarding but structured process. This page outlines what
-researchers and developers can expect at each stage, from the initial decision to publish through to
-ongoing maintenance.
+## Increased Visibility and Recognition
 
-## Step 1 — Initial Consultation with the OSPO
+By open-sourcing your project, you publish your work for everyone to see and benefit from. This is
+an opportunity to share your work, collaborate, and engage with users and potential contributors
+(both inside and outside the academic and research community), and to attract new developers and
+designers to the project.
 
-The first step is to contact the CERTH OSPO. At this stage, you will discuss:
+## Maintenance and Support
 
-- The **nature of the project** (software, hardware, dataset, documentation, or a combination)
-- **Applicable funding obligations** — Horizon Europe, ERC, and many national funding schemes require
-  or strongly encourage open-source releases; your grant agreement may specify a particular licence
-- **Consortium agreements** — in multi-partner projects, all partners must agree before release
-- **Third-party components** already embedded in the project that may affect the licence choice
+Once a project is open source, it is expected to allocate resources for ongoing maintenance and
+support. This includes addressing bug reports, reviewing and merging contributions, and ensuring the
+overall health of the project. Especially with contributions from short-term personnel (PhD
+students, post-docs, project staff), a clear succession plan should be established in case the main
+contributor leaves CERTH. Content moderation of comments or code contributions may also be required.
 
-The OSPO will help you identify the appropriate licence and outline the due diligence actions required
-before publication.
+## Use of Proprietary Tooling
 
-## Step 2 — Due Diligence and Preparation
+Some of the tools used for development, simulation, or hardware design may be proprietary or
+licence-restricted. People outside CERTH may not have access to these tools, and users may ask for
+changes in the tooling, libraries, or other components in order to reproduce your work and
+contribute to the project. It is good to keep these possibilities in mind when estimating the
+maintenance effort.
 
-Once the licence direction is clear, the project undergoes a preparation phase:
+## Evolving Project Direction
 
-- **Copyright and licence audit** — ensuring all files carry correct SPDX notices (see
-  [Recommendations: Copyright](../recommendations/copyright.qmd))
-- **Dependency scan** — confirming no licence conflicts exist in the dependency tree
-- **Security review** — checking for exposed credentials, hardcoded secrets, or sensitive internal paths
-  in the codebase and its git history
-- **Documentation review** — ensuring a `README`, `LICENSE`, and `CONTRIBUTING` file are present and
-  adequate
+Over time, and especially with multiple contributors, the project may evolve in directions you might
+not have anticipated. This includes contributions far beyond the originally devised scope, or
+conflicting contributions. As a project owner or maintainer, you need to balance your own needs with
+those of the community, and in case of conflicts, remain flexible.
 
-The CERTH OSPO provides a checklist to guide this phase and can assist with tooling.
+## Licensing and Other Legal Considerations
 
-## Step 3 — Review and Approval
+Open-sourcing involves legal considerations. Guidance on important subjects such as licensing and
+copyright is provided in the [Recommendations](../recommendations/licensing.qmd) section.
 
-The prepared project is reviewed by the OSPO. For projects developed under funded grants, a brief
-sign-off from the relevant Institute or project coordinator may also be required. This step is
-intentionally lightweight — the goal is to confirm compliance, not to judge the research.
+## Risks and Dual Use
 
-## Step 4 — Publication
-
-Upon passing review, the project is published on CERTH's official open-source hosting infrastructure —
-typically GitHub under the CERTH organisation — and optionally listed in the CERTH OSPO public
-directory, making it discoverable to external partners and the research community.
-
-## Step 5 — After Publication
-
-Open source does not end at publication. Researchers should be prepared to:
-
-- **Respond to issues and pull requests** from the community in a reasonable timeframe
-- **Keep dependencies updated** to address security vulnerabilities
-- **Periodically re-assess** licence compatibility as new dependencies are added
-- **Engage with the CERTH OSPO** if significant changes to the project's scope, licence, or governance
-  are needed
-
-The CERTH OSPO remains available throughout the project's lifetime to provide guidance and support.
-
-## Common Questions
-
-**How long does the process take?**
-: For a well-prepared project, the review is typically completed within one to two weeks. Preparation
-  time depends on the size and complexity of the codebase and how much due diligence work remains.
-
-**Do I need to open-source everything?**
-: No. The OSPO will help you identify which components are appropriate to release and which may need to
-  remain private due to IP, security, or contractual constraints.
-
-**What if my project depends on proprietary tools or datasets?**
-: This is a common situation in research. The OSPO will advise on how to structure the release so that
-  the open-source components are clearly separated from any proprietary dependencies.
+As the project is publicly accessible, this could invite scrutiny in terms of copyright, use of
+other libraries, and general legal risks. This is described in more detail within the
+[Due Diligence](due-diligence.qmd) section. One specific issue is the possibility of dual use. If the
+technology of the project could be used in sensitive industries such as defence, we recommend
+reaching out to the CERTH OSPO to investigate on a per-project basis.

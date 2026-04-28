@@ -8,10 +8,9 @@ toc: true
 Copyright represents a collection of exclusive rights held by creators over their original works,
 including authority over how their creations are utilised and distributed.
 
-The [Berne Convention](https://en.wikipedia.org/wiki/Berne_Convention), an international treaty adopted
-by most nations worldwide, establishes fundamental copyright principles and promotes consistency in
-intellectual property protection globally. Greece, as a member state of the EU, implements these
-principles through national law and EU directives on copyright and related rights.
+The general principles related to copyright are specified in the Berne Convention, an international treaty 
+which has been ratified by the vast majority of countries in the world and whose main purpose is to provide 
+uniformity of copyright and similar rights across the globe.
 
 By default, copyright functions under an "all rights reserved" model, restricting others from accessing,
 copying, modifying, or sharing work without explicit authorisation. Licences serve as the mechanism to
@@ -19,45 +18,11 @@ grant these permissions.
 
 ## Copyright at CERTH
 
-At CERTH, employed personnel — including permanent researchers, engineers, and affiliated staff —
+At CERTH, employed personnel (including permanent researchers, engineers, and affiliated staff)
 typically have the works produced within the scope of their professional activities held by their
-respective CERTH Institute as the copyright owner, in accordance with Greek employment and intellectual
-property law.
+respective CERTH Institute as the copyright owner, in accordance with Greek employment and
+intellectual property law.
 
 Before publishing any work that incorporates third-party contributions, securing signed agreements or
 valid licences from the relevant copyright holders is essential. This applies equally to code,
 documentation, datasets, and design files.
-
-When in doubt about copyright ownership — especially in collaborative or externally funded projects —
-consult the CERTH OSPO before proceeding.
-
-## What Copyright Protects
-
-Copyright protects original expression. In the context of research and engineering at CERTH, this
-includes:
-
-- **Source code** — programs, scripts, configuration files with sufficient creative content
-- **Documentation** — written descriptions, manuals, and tutorials
-- **Diagrams and figures** — technical illustrations and design schematics
-- **Datasets with creative structure** — curated collections where the selection or arrangement is
-  original
-
-Copyright does **not** protect:
-
-- **Ideas or algorithms in the abstract** — only their specific expression
-- **Purely factual data** — raw measurements, numerical results without creative arrangement
-- **Standard interfaces or formats** — names, signatures, and protocols
-
-Understanding this boundary helps define the scope of the rights you hold and the permissions others
-need when using your work.
-
-## Third-Party Components
-
-Many research software projects incorporate libraries, datasets, or code from external sources. Before
-open-sourcing, you must:
-
-1. **Identify all third-party components** and their respective copyright holders
-2. **Verify the licence** of each component is compatible with your intended project licence
-3. **Preserve existing copyright notices** — these must not be removed or altered
-
-See the [Due Diligence](due-diligence.qmd) page for a structured approach to this analysis.
