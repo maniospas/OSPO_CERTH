@@ -252,3 +252,10 @@ $btn-close-color:            $headings-color !default;
 p {
   text-align: justify;
 }
+
+.sidebar-link.active {
+  color: $primary !important;
+  font-weight: 600;
+  background-color: rgba($primary, 0.08);
+  border-radius: 4px;
+}
