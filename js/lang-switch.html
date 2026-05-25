@@ -26,6 +26,10 @@
     docs: { en: base + 'docs/index.html', gr: base + 'docs-gr/index.html' }
   };
 
+  // ── Rewrite brand/title link (always hardcoded to EN by Quarto) ──────────
+  var brandLink = document.querySelector('a.navbar-brand');
+  if (brandLink) brandLink.href = isGR ? targets.home.gr : targets.home.en;
+
   // ── Update every relevant navbar link ─────────────────────────────────────
   var homeLink = null;
   var docsLink = null;
@@ -35,8 +39,12 @@
     var text = span.textContent.trim();
 
     if (text === 'EN' || text === 'GR') {
-      // Show the TARGET language (where the button will take you)
-      span.textContent = isGR ? 'EN' : 'GR';
+      var activeStyle = 'font-weight:bold;text-decoration:underline;';
+      var inactiveStyle = 'opacity:0.5;';
+      span.innerHTML =
+        '<span style="' + (isGR ? activeStyle : inactiveStyle) + '">GR</span>' +
+        '<span style="margin:0 4px">|</span>' +
+        '<span style="' + (isGR ? inactiveStyle : activeStyle) + '">EN</span>';
       a.href = otherHref;
       // Reveal toggle — was hidden by lang-init.html to suppress flash
       var item = a.closest('.nav-item');
