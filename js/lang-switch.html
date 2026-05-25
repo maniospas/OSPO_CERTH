@@ -2,7 +2,7 @@
 (function () {
   // Runs synchronously at end of <body> — DOM is fully available, no DOMContentLoaded needed.
   var path = window.location.pathname;
-  var isGR = path.indexOf('/docs-gr/') !== -1 || path.indexOf('index-gr') !== -1;
+  var isGR = path.indexOf('/docs-gr/') !== -1 || path.indexOf('index-gr') !== -1 || path.indexOf('contact-gr') !== -1;
 
   // ── Equivalent page in the other language ─────────────────────────────────
   var otherHref;
@@ -10,6 +10,10 @@
     otherHref = path.replace('/docs-gr/', '/docs/');
   } else if (path.indexOf('/docs/') !== -1) {
     otherHref = path.replace('/docs/', '/docs-gr/');
+  } else if (path.indexOf('contact-gr.html') !== -1) {
+    otherHref = path.replace('contact-gr.html', 'contact.html');
+  } else if (path.indexOf('contact.html') !== -1) {
+    otherHref = path.replace('contact.html', 'contact-gr.html');
   } else if (path.indexOf('index-gr.html') !== -1) {
     otherHref = path.replace('index-gr.html', 'index.html');
   } else {
@@ -22,8 +26,9 @@
   var base = m ? m[1] + '/' : (path.endsWith('/') ? path : path.substring(0, path.lastIndexOf('/') + 1));
 
   var targets = {
-    home: { en: base + 'index.html',      gr: base + 'index-gr.html' },
-    docs: { en: base + 'docs/index.html', gr: base + 'docs-gr/index.html' }
+    home:    { en: base + 'index.html',       gr: base + 'index-gr.html' },
+    docs:    { en: base + 'docs/index.html',  gr: base + 'docs-gr/index.html' },
+    contact: { en: base + 'contact.html',     gr: base + 'contact-gr.html' }
   };
 
   // ── Rewrite brand/title link (always hardcoded to EN by Quarto) ──────────
@@ -33,6 +38,7 @@
   // ── Update every relevant navbar link ─────────────────────────────────────
   var homeLink = null;
   var docsLink = null;
+  var contactLink = null;
   document.querySelectorAll('.navbar-nav a.nav-link').forEach(function (a) {
     var span = a.querySelector('.menu-text');
     if (!span) return;
@@ -57,11 +63,16 @@
       a.href = isGR ? targets.docs.gr : targets.docs.en;
       span.textContent = isGR ? 'Τεχνική Τεκμηρίωση' : 'Technical Documentation';
       docsLink = a;
+    } else if (text === 'Contact' || text === 'Επικοινωνία') {
+      a.href = isGR ? targets.contact.gr : targets.contact.en;
+      span.textContent = isGR ? 'Επικοινωνία' : 'Contact';
+      contactLink = a;
     }
   });
 
   // ── Fix navbar active state after rewriting hrefs ─────────────────────────
-  var onDocs = path.indexOf('/docs-gr/') !== -1 || path.indexOf('/docs/') !== -1;
+  var onDocs    = path.indexOf('/docs-gr/') !== -1 || path.indexOf('/docs/') !== -1;
+  var onContact = path.indexOf('contact') !== -1;
 
   function setActive(link, active) {
     if (!link) return;
@@ -74,7 +85,8 @@
     }
   }
 
-  setActive(homeLink, !onDocs);
-  setActive(docsLink, onDocs);
+  setActive(homeLink,    !onDocs && !onContact);
+  setActive(docsLink,    onDocs);
+  setActive(contactLink, onContact);
 })();
 </script>
