@@ -23,7 +23,7 @@ The Open Source Programs Office (OSPO) at CERTH serves as an entry point to CERT
 
 -   To advise, guide, and train CERTH staff regarding best practices, tools, licensing, developments, etc., for Open Source projects.
 
--   To provide recommendations for the release of software and hardware developed at CERTH as open-source projects.
+-   To provide recommendations for the release of software developed at CERTH as open-source projects.
 
 -   To provide guidelines and best practices concerning the technical aspects of sharing code and designs (e.g., hosting locations, appropriate services to utilize, proper use of CERTH infrastructures, general Open Source tools such as license compliance checks, and testing configuration methodologies).
 
