@@ -1,6 +1,0 @@
----
-title: "Project"
-toc: false
----
-
-*Coming soon.*

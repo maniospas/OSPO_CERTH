@@ -49,6 +49,9 @@
       a.href = isGR ? targets.docs.gr : targets.docs.en;
       span.textContent = isGR ? 'Τεχνική Τεκμηρίωση' : 'Technical Documentation';
       docsLink = a;
+    } else if (text === 'Software' || text === 'Λογισμικό') {
+      span.textContent = isGR ? 'Λογισμικό' : 'Software';
+      docsLink = a;
     }
   });
 

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CERTH Catalogue</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+      img { max-width: 500px; display: none }
+      #search-bar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: white;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 1rem;
+      }
+      .box.hoverable {
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        margin-bottom: 6px;
+      }
+      .box.hoverable:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+
+      /* Preview panel */
+      #preview-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 200;
+      }
+      #preview-overlay.is-active { display: block; }
+
+      #preview-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(800px, 90vw);
+        background: white;
+        z-index: 201;
+        overflow-y: auto;
+        padding: 1.5rem;
+        box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+      }
+      #preview-panel.is-active { transform: translateX(0); }
+
+      #preview-panel img { display: block; max-width: 100%; }
+
+      #preview-close {
+        position: sticky;
+        top: 0;
+        float: right;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 1;
+        margin-bottom: 0.5rem;
+        display: none; // temporary disable
+      }
+    </style>
+  </head>
+  <body>
+
+  <!-- Preview overlay + panel -->
+  <div id="preview-overlay"></div>
+  <div id="preview-panel">
+    <button id="preview-close" aria-label="Close">&times;</button>
+    <div id="preview-content"></div>
+  </div>
+
+  <div class="container">
+    <div id="search-bar">
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input is-medium" type="text" id="search-input" placeholder="Search catalogue…">
+          <span class="icon is-left">🔍</span>
+        </div>
+        <p class="help" id="search-hint"></p>
+      </div>
+    </div>
+    <div class="fixed-grid has-1-cols" id="catalogue">
+      <div class="cell p-1" id="APNet"><article class="box hoverable" data-preview="previews/APNet.html"><h2 class="title mb-0">APNet<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/APNet">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:vasileioubill95@certh.gr">🖂 vasileioubill95@certh.gr</a></span>
+</h2>
+<div><div>In this work we present APNet, a Deep Learning approach with biological explainability to discover predictive drivers of COVID-19 severity f...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="BEEMUS"><article class="box hoverable" data-preview="previews/BEEMUS.html"><h2 class="title mb-0">BEEMUS<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/BEEMUS">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>+ 2 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="BPM"><article class="box hoverable" data-preview="previews/BPM.html"><h2 class="title mb-0">BPM<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/BPM">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>CONTENTS OF THIS FILE
+
+Introduction
+Requirements
+Installation
+Execution
+Example
+Folder Structure
+
+
+INTRODUCTION
+BPM (BLAST - Phylogenetic P...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="Computational_Verification"><article class="box hoverable" data-preview="previews/Computational_Verification.html"><h2 class="title mb-0">Computational Verification<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/computational-verification">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:olgapapa@iti.gr">🖂 olgapapa@iti.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Usage</b>&nbsp;&nbsp;</td>
+<td>The framework performs feature extraction on a new set of tweets and then classify each of them as truthful/reliable or not. 
+Initialize pa...</td></tr><tr><td><b>+ 7 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="ELIXIR_BFSP_Odyssey"><article class="box hoverable" data-preview="previews/ELIXIR_BFSP_Odyssey.html"><h2 class="title mb-0">ELIXIR-BFSP-Odyssey<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/ELIXIR-BFSP-Odyssey">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Odyssey</b>&nbsp;&nbsp;</td>
+<td>Odyssey is an R shiny application for the exploration of Molecular Biodiversity in Greece and Norway.</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td># install.packages(&quot;remotes&quot;)
+remotes::install_github(&quot;BiodataAnalysisGroup/ELIXIR-BFSP-Odyssey&quot;)
+</td></tr><tr><td><b>Usage</b>&nbsp;&nbsp;</td>
+<td># library(Odyssey)
+Odyssey::run_odyssey()
+</td></tr><tr><td><b>Contributing</b>&nbsp;&nbsp;</td>
+<td>If you would like to contribute to this pipeline, please see the Contribution Guidelines.</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This work, as a whole, is licensed under the MIT license.
+The code contained in this website is simultaneously available under the MIT licen...</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="G_Class"><article class="box hoverable" data-preview="previews/G_Class.html"><h2 class="title mb-0">G-Class<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/GClass">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>
+G-Class: A Divide and Conquer Application for Grid Protein Classification
+Protein classification has always been one of the major challenges...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="Goedel_numbering"><article class="box hoverable" data-preview="previews/Goedel_numbering.html"><h2 class="title mb-0">Goedel numbering<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/godel-numbering">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>
+</div>
+<table>
+<tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>
+(arXiv preprint) Argyris Nicolaidis and Fotis Psomopoulos, "DNA coding and Gödel numbering", arXiv:1909.13574, 2019 (link)
+</td></tr><tr><td><b>Structure</b>&nbsp;&nbsp;</td>
+<td>godel-numbering repository consists of four folders:
+- data: This is where all the input files are stored.
+- R: This is where all the R scri...</td></tr><tr><td><b>Dependencies</b>&nbsp;&nbsp;</td>
+<td>Execute the following line to install the required packages:
+- from CRAN:
+install.packages(c(&quot;seqinr&quot;, &quot;MASS&quot;, &quot;ggp...</td></tr><tr><td><b>Input</b>&nbsp;&nbsp;</td>
+<td>
+Input files are stored inside data directory.
+</td></tr><tr><td><b>Output</b>&nbsp;&nbsp;</td>
+<td>
+Outputs are stored inside plots directory.
+</td></tr><tr><td><b>+ 5 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="GridCG"><article class="box hoverable" data-preview="previews/GridCG.html"><h2 class="title mb-0">GridCG<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/GridCG">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>Grid CG 
+A scalable and modular Grid computing framework for Comparative Genomics  
+This projects contains a large-scale data analysis tool...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="IgIDivA"><article class="box hoverable" data-preview="previews/IgIDivA.html"><h2 class="title mb-0">IgIDivA<span style="float:right" class="tag is-link is-light"><a href="https://github.com/laurazara/IgIDivA">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Overview</b>&nbsp;&nbsp;</td>
+<td>IgIDivA (Immunoglobulin Intraclonal Diversification Analysis) is a purpose-built tool for the analysis of the intraclonal diversification pr...</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>The IgIDivA scripts can be freely downloaded here.
+It requires R (version "4.1"), which can be installed on any operating system from CRAN....</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="InterTads"><article class="box hoverable" data-preview="previews/InterTads.html"><h2 class="title mb-0">InterTads<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/InterTADs">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
+</h2>
+<div><div>InterTADs is an open-source tool written in R, 
+for integrating multi-omics data (e.g. DNA methylation, expression, mutation) 
+from the same...</div>
+<table>
+<tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>You can simply clone the repository by using git:
+git clone https://github.com/BiodataAnalysisGroup/InterTADs.git
+</td></tr><tr><td><b>Data</b>&nbsp;&nbsp;</td>
+<td>The proposed method was evaluated on data from Chronic lymphocytic leukemia 
+(DNA methylation and expression values). The datasets have been...</td></tr><tr><td><b>Contributing</b>&nbsp;&nbsp;</td>
+<td>Pull requests are welcome. For major changes, please open an issue first to
+discuss what you would like to change.</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT 
+License - see the LICENSE file for details</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="Intermediate_CNN_Features"><article class="box hoverable" data-preview="previews/Intermediate_CNN_Features.html"><h2 class="title mb-0">Intermediate CNN Features<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/intermediate-cnn-features">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
+</h2>
+<div><div>This repository contains the implementation of the feature extraction process described in
+Near-Duplicate Video Retrieval by Aggregating Int...</div>
+<table>
+<tr><td><b>Prerequisites</b>&nbsp;&nbsp;</td>
+<td>
+Python
+Caffe or Tensorflow 1.xx
+</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>Clone this repo:
+
+git clone https://github.com/MKLab-ITI/intermediate-cnn-features
+cd intermediate-cnn-features
+
+
+
+Install all dependencies...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>If you use this code for your research, please cite our paper.
+@inproceedings{kordopatis2017near,
+  title={Near-Duplicate Video Retrieval by...</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the Apache License 2.0 - see the LICENSE file for details</td></tr><tr><td><b>+ 3 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="JGNN"><article class="box hoverable" data-preview="previews/JGNN.html"><h2 class="title mb-0">JGNN<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/JGNN">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
+</h2>
+<div><div>Resource efficient machine learning and graph neural networks in native Java.
+Graph Neural Networks (GNNs) are getting more and more popu...</div>
+<table>
+<tr><td><b>:notebook: Citation</b>&nbsp;&nbsp;</td>
+<td>@article{krasanakis2023101459,
+    title = {JGNN: Graph Neural Networks on native Java},
+    journal = {SoftwareX},
+    volume = {23},
+    p...</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="MAI_BIAS"><article class="box hoverable" data-preview="previews/MAI_BIAS.html"><h2 class="title mb-0">MAI-BIAS<span style="float:right" class="tag is-link is-light"><a href="https://mammoth-ai.eu/">🏠 mammoth-ai</a></span>
+<span style="float:right" class="tag is-link is-light"><a href="https://github.com/mammoth-eu/mammoth-commons">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
+</h2>
+<div><div>MAI-BIAS modules and local runer
+
+
+
+
+This software is part of MAI-BIAS; a low-code toolkit for fairness analysis 
+and mitigation, with an ac...</div>
+<table>
+<tr><td><b>✨ About</b>&nbsp;&nbsp;</td>
+<td>This repository is created by the MAMMOth
+project and holds the mammoth-commons library, which contains 
+supporting datatypes and decorators...</td></tr><tr><td><b>+ 4 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="Mongoose"><article class="box hoverable" data-preview="previews/Mongoose.html"><h2 class="title mb-0">Mongoose<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/Mongoose">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:ggeorav@certh.gr (main)">🖂 ggeorav@certh.gr (main)</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Abstract</b>&nbsp;&nbsp;</td>
+<td>Perturbation modelling in single-cell data is crucial for studying molecular changes elicited due to molecular knockouts, chemical compound...</td></tr><tr><td><b>Workflow</b>&nbsp;&nbsp;</td>
+<td>First you can download the DBiT-dataset</td></tr><tr><td><b>Contribute</b>&nbsp;&nbsp;</td>
+<td>We welcome and greatly appreciate any sort of feedback and/or contribution!
+If you have any questions, please either open an issue or write...</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="Multimedia_Geotagging"><article class="box hoverable" data-preview="previews/Multimedia_Geotagging.html"><h2 class="title mb-0">Multimedia Geotagging<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/multimedia-geotagging">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
+</h2>
+<div><div>Multimedia Geotagging
+This repository contains the implementation of algorithms that estimate the geographic location of multimedia items ba...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="Mutations_Meta_Analyser"><article class="box hoverable" data-preview="previews/Mutations_Meta_Analyser.html"><h2 class="title mb-0">Mutations-Meta-Analyser<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/Mutations-Meta-Analyser">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning"><article class="box hoverable" data-preview="previews/Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning.html"><h2 class="title mb-0">Near-Duplicate Video Retrieval with Deep Metric Learning<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/ndvr-dml">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Prerequisites</b>&nbsp;&nbsp;</td>
+<td>
+Python
+Tensorflow 1.xx
+</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>Clone this repo:
+
+git clone https://github.com/MKLab-ITI/ndvr-dml
+cd ndvr-dml
+
+
+
+You can install all the dependencies by
+
+pip install -r re...</td></tr><tr><td><b>Evaluation</b>&nbsp;&nbsp;</td>
+<td>Evaluate the performance of the system by providing the trained model path and the global features of the 
+CC_WEB_VIDEO.
+
+python evaluation...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>If you use this code for your research, please cite our paper.
+@inproceedings{kordopatis2017dml,
+  title={Near-Duplicate Video Retrieval wit...</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the Apache License 2.0 - see the LICENSE file for details</td></tr><tr><td><b>+ 5 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="Odysseus"><article class="box hoverable" data-preview="previews/Odysseus.html"><h2 class="title mb-0">Odysseus<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/odysseys">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>Odysseus: Odysseus: a versatile high performance framework for optimizing bioinformatics workflow parallelization in hybrid cloud environmen...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="UMIc"><article class="box hoverable" data-preview="previews/UMIc.html"><h2 class="title mb-0">UMIc<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/UMIc">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
+</h2>
+<div><div>UMIc is a framework, written in R, implementing a new proposed method for UMI deduplication and reads correction. The method works at nucleo...</div>
+<table>
+<tr><td><b>Prerequisites</b>&nbsp;&nbsp;</td>
+<td>The packages needed to be installed, in order to run the project are:
+- from CRAN
+install.packages(c(&quot;tidyverse&quot;, &quot;data.table...</td></tr><tr><td><b>Installing</b>&nbsp;&nbsp;</td>
+<td>The project can be downloaded using git:
+git clone https://github.com/BiodataAnalysisGroup/UMIc
+</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT License - see the LICENSE file for details.</td></tr><tr><td><b>+ 3 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="VB_Mitigator"><article class="box hoverable" data-preview="previews/VB_Mitigator.html"><h2 class="title mb-0">VB-Mitigator<span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/vb-mitigator">🏠 github</a></span>
+<span style="float:right" class="tag is-link is-light"><a href="https://vb-mitigator.readthedocs.io/">🏠 readthedocs</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:gsarridis@iti.gr">🖂 gsarridis@iti.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>+ 14 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="ViSiL"><article class="box hoverable" data-preview="previews/ViSiL.html"><h2 class="title mb-0">ViSiL<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/visil">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Prerequisites</b>&nbsp;&nbsp;</td>
+<td>
+Python 3
+Tensorflow 1.xx (tested with 1.8-1.15)
+</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>Clone this repo:
+
+git clone https://github.com/MKLab-ITI/visil
+cd visil
+
+
+
+You can install all the dependencies by
+
+pip install -r requirem...</td></tr><tr><td><b>Evaluation</b>&nbsp;&nbsp;</td>
+<td>We also provide code to reproduce the experiments in the paper.
+
+
+First, download the videos of the dataset you want. The supported option...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>If you use this code for your research, please consider citing our paper:
+@inproceedings{kordopatis2019visil,
+  title={{ViSiL}: Fine-grained...</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the Apache License 2.0 - see the LICENSE file for details</td></tr><tr><td><b>+ 7 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="align_paths"><article class="box hoverable" data-preview="previews/align_paths.html"><h2 class="title mb-0">align-paths<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/align-paths">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>Publication:
+"Inference of Pathway Decomposition Across Multiple Species Through Gene Clustering"
+
+International Journal of Artificial Inte...</div>
+<table>
+</table>
+</div></article></div>
+
+<div class="cell p-1" id="fairbench"><article class="box hoverable" data-preview="previews/fairbench.html"><h2 class="title mb-0">fairbench<span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/FairBench">🏠 github</a></span>
+<span style="float:right" class="tag is-link is-light"><a href="https://fairbench.readthedocs.io/">🏠 readthedocs</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
+</h2>
+<div><div>This software is part of MAI-BIAS; a low-code toolkit for
+fairness analysis and mitigation, with an accompanying suite of coding
+tool...</div>
+<table>
+<tr><td><b>✨ About</b>&nbsp;&nbsp;</td>
+<td>FairBench can be imported in Python AI projects to
+offer standardized exploration of more than 300 
+fairness metrics. It also produces repor...</td></tr><tr><td><b>+ 6 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="k_taxatree"><article class="box hoverable" data-preview="previews/k_taxatree.html"><h2 class="title mb-0">k-taxatree<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/k-taxatree">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>k-taxatree is a classification workflow written in R, predicting the labels of the first four taxonomic levels (kingdom, phylum, class, orde...</div>
+<table>
+<tr><td><b>Prerequisites</b>&nbsp;&nbsp;</td>
+<td>The packages needed to be installed, in order to run the project are:
+- from CRAN
+install.packages(c(&quot;parallel&quot;, &quot;data.table&...</td></tr><tr><td><b>Installing</b>&nbsp;&nbsp;</td>
+<td>The project can be downloaded using git:
+git clone https://github.com/BiodataAnalysisGroup/k-taxatree
+</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT License - see the LICENSE file for details.</td></tr><tr><td><b>+ 2 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="kmerAnalyzer"><article class="box hoverable" data-preview="previews/kmerAnalyzer.html"><h2 class="title mb-0">kmerAnalyzer<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/kmerAnalyzer">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div></div>
+<table>
+<tr><td><b>Overview</b>&nbsp;&nbsp;</td>
+<td>An alignment-free method capable of processing and counting k-mers in a reasonable time, while evaluating multiple values of the k parameter...</td></tr><tr><td><b>Contributing</b>&nbsp;&nbsp;</td>
+<td>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT License - see the LICENSE file for details</td></tr><tr><td><b>+ 8 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="lineagespot"><article class="box hoverable" data-preview="previews/lineagespot.html"><h2 class="title mb-0">lineagespot<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/lineagespot">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
+</h2>
+<div><div>Lineagespot is a framework written in R, and aims to identify SARS-CoV-2 related mutations based on a single (or a list) of variant(s) file(...</div>
+<table>
+<tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td># install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;BiodataAnalysisGroup/lineagespot&quot;)
+</td></tr><tr><td><b>Raw data analysis</b>&nbsp;&nbsp;</td>
+<td>The processing steps of the raw fastq files can be found here.</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>If you use the tool, please cite the following work:
+Pechlivanis, N., Tsagiopoulou, M., Maniou, M.C. et al. Detecting SARS-CoV-2 lineages an...</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="lncAPNet"><article class="box hoverable" data-preview="previews/lncAPNet.html"><h2 class="title mb-0">lncAPNet<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/lncAPNet">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:vasileioubill95@certh.gr">🖂 vasileioubill95@certh.gr</a></span>
+</h2>
+<div><div>lncAPNet is an extension of the Activity PASNet (APNet) framework that incorporates long non-coding RNAs (lncRNAs) into explainable, network...</div>
+<table>
+<tr><td><b>Overview</b>&nbsp;&nbsp;</td>
+<td>lncAPNet is a novel computational pipeline built upon the recently reported Activity PASNet (APNet) framework
+(Gavriilidis et al., 2025).
+It...</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>Under construction
+</td></tr><tr><td><b>+ 3 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="metaDIEA"><article class="box hoverable" data-preview="previews/metaDIEA.html"><h2 class="title mb-0">metaDIEA<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/metaDIEA">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>RNA sequencing has become the standard technique for high resolution genome-wide monitoring of gene expression. As such, it often comprises...</div>
+<table>
+<tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT License.</td></tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="miRkit"><article class="box hoverable" data-preview="previews/miRkit.html"><h2 class="title mb-0">miRkit<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/miRkit.git">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
+</h2>
+<div><div>miRkit was implemented in R.</div>
+<table>
+<tr><td><b>Structure</b>&nbsp;&nbsp;</td>
+<td>miRkit repository consists of three folders:
+- data: This is where all the input files are stored.
+- R: This is where all the R scripts are...</td></tr><tr><td><b>Dependencies</b>&nbsp;&nbsp;</td>
+<td>Execute the following lines to install the required packages:
+- from CRAN:
+install.packages(c(&quot;data.table&quot;, &quot;tidyverse&quot;,...</td></tr><tr><td><b>Installing</b>&nbsp;&nbsp;</td>
+<td>The project can be downloaded using git:
+git clone https://github.com/BiodataAnalysisGroup/miRkit.git
+</td></tr><tr><td><b>Input</b>&nbsp;&nbsp;</td>
+<td>
+For extra details about the input please move to the data folder and checkout the correpsonding README.md file.
+</td></tr><tr><td><b>Output</b>&nbsp;&nbsp;</td>
+<td>
+For extra details about the output please move to the output folder and checkout the correpsonding README.md file
+</td></tr><tr><td><b>License</b>&nbsp;&nbsp;</td>
+<td>This project is licensed under the MIT License - see the LICENSE file for details.</td></tr><tr><td><b>+ 3 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="pygrank"><article class="box hoverable" data-preview="previews/pygrank.html"><h2 class="title mb-0">pygrank<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/pygrank">🏠 github</a></span>
+<span style="float:right" class="tag is-link is-light"><a href="https://pygrank.readthedocs.io/en/latest/">🏠 readthedocs</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
+</h2>
+<div><div>
+Fast node ranking algorithms on large graphs.
+Author: Emmanouil (Manios) Krasanakis
+License: Apache 2.0
+
+
+</div>
+<table>
+<tr><td><b>+ 5 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="synth4bench"><article class="box hoverable" data-preview="previews/synth4bench.html"><h2 class="title mb-0">synth4bench<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/synth4bench">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:sfragkoul@certh.gr">🖂 sfragkoul@certh.gr</a></span>
+</h2>
+<div><div>
+  
+
+
+</div>
+<table>
+<tr><td><b>Abstract</b>&nbsp;&nbsp;</td>
+<td>Somatic variant calling algorithms are essential for detecting genomic alterations. However, evaluating their performance can be challengi...</td></tr><tr><td><b>Description</b>&nbsp;&nbsp;</td>
+<td>Our framekwork addresses the challenge of variant calling, particularly for low-alle frequency variants (≤10%). The goal is to develo...</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>Create the Conda environment:
+bash
+conda env create -f environment.yml
+conda activate synth4bench
+
+
+Install NEAT v3.3:
+Download version v3...</td></tr><tr><td><b>Contribute</b>&nbsp;&nbsp;</td>
+<td>We welcome and greatly appreciate any feedback or contributions!
+If you have questions, please open an issue here or email sfragkoul@certh.g...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
+<td>Our work has been submitted to the bioRxiv preprint repository. If you use synth4bench, or any of our scripts/code, please cite:
+
+S.-C. Frag...</td></tr><tr><td><b>+ 5 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+
+<div class="cell p-1" id="tripr"><article class="box hoverable" data-preview="previews/tripr.html"><h2 class="title mb-0">tripr<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/tripr">🏠 github</a></span>
+<span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
+</h2>
+<div><div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<table>
+<tr><td><b>Description</b>&nbsp;&nbsp;</td>
+<td>tripr is a Bioconductor package, written in
+shiny that provides analytics services on
+antigen receptor (B cell receptor immunoglobulin, BcR...</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
+<td>tripr is distributed as a Bioconductor 
+package and requires R (version "4.5"), which can be installed on any 
+operating system from CRAN,...</td></tr><tr><td><b>+ 3 more</b>&nbsp;&nbsp;</td>
+</tr></table>
+</div></article></div>
+<script>const kwdata = {
+APNet: {"apnet":11.83,"deep":1.24,"learning":1.67,"approach":1.03,"biological":2.49,"discover":1.44,"predictive":7.21,"drivers":8.66,"covid":4.33,"severity":2.89,"focusing":1.44,"distinct":2.89,"plasma":4.33,"proteomic":4.33,"datasets":1.56,"olink":2.89,"proximity":1.44,"assay":1.44,"pea":1.44,"technology":1.44,"omics":1.82,"expression":4.33,"matrices":1.82,"proteomics":1.44,"activity":1.86,"reflect":1.44,"strength":1.44,"signal":2.89,"involves":1.44,"bayesian":1.44,"based":1.48,"differential":2.16,"analysis":1.08,"bulk":1.44,"scminer":1.44,"cell":1.03,"sjaracne":1.82,"co":2.73,"graphs":1.54,"associates":1.44,"differentially":2.89,"active":1.82,"pathways":1.82,"pasnet":1.82,"predictions":1.03,"uses":1.44,"regularization":1.44,"hierarchical":1.44,"driver":5.46,"pathway":2.73,"connections":2.89,"interpretability":1.44,"shapley":1.44,"finally":1.12,"assembles":1.44,"bipartite":4.33,"networks":1.24,"incorporating":1.44,"information":2.23,"earlier":1.44,"mutual":1.44,"interactions":1.44,"valuable":1.44,"investigating":1.44,"mechanistic":1.44,"hypotheses":1.44,"shortest":1.44,"propagation":1.44,"simulation":1.44,"ensure":1.44,"generalizability":1.44,"fitting":1.44,"deployed":1.44,"cases":1.82,"separating":1.44,"validation":1.82,"discovered":2.89,"confirming":1.44,"nascent":1.44,"credence":1.44,"typical":1.44,"outperformed":1.44,"iterations":1.44,"uncovered":2.89,"traced":1.44,"circulating":1.44,"blood":1.44,"transformed":1.44,"seq":1.24,"scrna":1.44,"relatively":1.44,"unexplored":1.44,"syndecan":1.44,"keratin":1.44,"mitochondrial":1.44,"chaperone":1.44,"reflecting":1.44,"liver":1.44,"damage":1.44,"emerges":1.44,"severe":1.44,},
+BEEMUS: {"logo":1.44,"quick":3.64,"overview":1.44,"assessing":1.44,"sars":2.89,"cov":2.16,"evolution":1.44,"analysis":1.44,"emerging":1.44,"mutations":1.82,"rationale":4.33,"start":2.89,"contributing":1.86,"license":2.08,"citations":2.16,"credits":4.33,"patterns":4.33,"occuring":1.44,"beyond":1.44,"strain":2.89,"defining":1.44,"ones":1.44,"endeavor":1.44,"samples":1.12,"indicate":1.44,"evolutionary":2.89,"paths":1.44,"virus":1.44,"otherwords":1.44,"occurrence":1.44,"might":1.44,"suggest":1.44,"different":1.37,"ways":1.44,"grouping":1.44,"revealing":1.44,"history":1.44,"ol":1.92,"conda":3.35,"manager":1.44,"nextflow":3.64,"copying":1.44,"pasting":1.44,"directory":1.25,"folder":3.41,"accessible":1.44,"create":1.44,"inside":1.12,"project":2.67,"vcf":1.82,"live":2.89,"ref":1.44,"reference":1.44,"indices":1.44,"nc":5.77,"fasta":1.86,"fai":1.44,"dict":1.44,"annot":1.44,"biosample":1.44,"csv":3.11,"lineage":2.89,"lineages":10.92,"activate":1.67,"environment":1.54,"envs":1.44,"run":1.36,"pipeline":1.03,"nf":1.44,"summary":1.44,"dataset":1.56,"frequently":1.44,"occurring":1.44,"along":1.82,"graph":1.92,"script":1.25,"replacing":2.89,"string":1.44,"flag":1.82,"interest":12.98,"sequential":7.21,"order":2.28,"separated":3.73,"space":5.46,"shown":2.73,"ay":14.43,"ba":5.77,"python":1.67,"bin":1.44,"py":1.37,"datafolder":2.89,"datasetname":2.89,"graphsfolder":2.89,"graphs":1.03,"export":1.82,"arrow":1.44,"edges":1.44,"nodes":10.01,"plot":1.44,"dates":1.44,"everything":1.82,"went":1.44,"browser":1.44,"window":1.44,"pop":1.44,"showing":1.44,"arranged":1.44,"rearrange":1.44,"drag":1.44,"drop":1.44,"preferences":1.44,"strongly":1.44,"underneath":1.44,"groups":1.44,"msa":5.77,"msafilename":1.44,"nodesfilename":1.44,"treefilepath":2.89,"tree":1.74,"life":5.77,"caution":1.44,"remember":1.44,"executes":1.44,"go":1.44,"server":1.24,"right":1.44,"able":1.44,},
+BPM: {"contents":2.89,"introduction":2.89,"requirements":1.03,"installation":1.03,"execution":2.79,"example":1.56,"folder":6.82,"structure":1.67,"hr":3.35,"bpm":8.66,"blast":3.61,"phylogenetic":10.01,"profile":2.16,"mcl":14.43,"application":6.17,"sequence":2.23,"alignment":3.61,"profiling":1.44,"clustering":2.89,"protein":5.59,"sequences":1.44,"grid":1.24,"infrastructure":2.89,"specifically":1.44,"profiles":6.37,"based":1.11,"produced":1.82,"entities":1.44,"modules":1.24,"represent":1.44,"common":1.44,"aspect":1.44,"vast":1.44,"majority":1.44,"bionformatics":1.44,"note":5.77,"modes":1.44,"operation":1.44,"spawned":1.44,"activities":2.89,"bcplab":1.44,"wordpress":1.44,"bcpl":1.44,"lab":1.44,"previously":1.82,"cgu":1.44,"inspired":1.44,"protocols":1.44,"conjunction":1.44,"submit":1.44,"suggestions":1.44,"olgavrou":2.89,"gmail":2.89,"run":1.70,"user":2.09,"hellasgrid":10.10,"national":1.44,"lying":1.44,"must":1.86,"uploaded":4.33,"interface":2.73,"decompressed":1.44,"sh":4.35,"script":1.25,"input":4.02,"level":1.86,"txt":4.33,"reqired":1.44,"class":1.55,"database":12.26,"fasta":3.73,"consist":4.55,"one":2.09,"provided":3.60,"may":2.28,"either":1.92,"compressed":5.77,"query":7.21,"vs":1.44,"omitted":1.44,"genome":2.79,"map":4.55,"contains":1.52,"identifiers":1.44,"whoes":1.44,"proteins":1.44,"bamy":4.33,"xxx":4.33,"leua":1.44,"configured":2.89,"fields":1.44,"exact":3.64,"name":1.74,"tar":7.21,"gz":4.55,"option":10.10,"ignored":1.44,"raw":1.44,"field":1.82,"filled":2.89,"ready":1.44,"faa":1.44,"split":3.61,"job":4.55,"process":2.40,"phyl":1.44,"prof":1.44,"outputs":1.92,"identity":1.44,"choose":1.82,"output":3.25,"blastp":1.44,"binary":1.44,"extended":1.44,"email":4.55,"address":1.44,"wish":1.44,"via":2.89,"done":1.44,"defined":1.44,"proxy":7.21,"obtained":1.44,"tools":2.17,"obtaining":1.44,"certificate":1.44,"voms":1.44,"renewed":1.44,"screen":2.89,"advised":1.44,"mode":1.44,"aborted":1.44,"connectivity":1.44,"named":1.44,"sessionfolder":2.89,"timestamp":11.54,"created":1.30,"delete":2.89,"modify":1.44,"completed":1.44,"stored":1.74,"report":1.82,"instance":1.44,"ran":1.44,"sent":1.44,"outsimple":1.44,"clusters":3.64,"outphyl":1.44,"phylogeneticprofiles":1.44,"parseoutput":1.44,"cleanup":2.89,"storage":4.33,"elements":4.33,"usage":1.44,"download":1.92,"specifies":1.44,"foldername":1.44,"clean":1.44,"track":1.44,"executions":1.44,"find":1.24,"accept":1.44,"folderstructure":1.44,},
+Computational_Verification: {"classify":5.46,"content":2.23,"truthful":2.89,"reliable":1.82,"features":9.62,"extracted":3.91,"tweet":24.53,"text":2.57,"based":8.49,"user":3.75,"published":1.44,"ub":1.44,"two":1.37,"level":1.24,"classification":1.44,"model":3.04,"hr":3.35,"evaluations":1.44,"verification":2.89,"corpus":2.89,"vc":1.44,"fake":7.21,"real":3.91,"tweets":7.21,"mediaeval":2.89,"verifying":2.89,"multimedia":2.89,"vmu":15.87,"comprise":1.44,"total":4.55,"cases":2.73,"images":1.03,"misused":2.89,"posted":1.44,"dataset":1.95,"image":1.54,"strong":6.65,"words":4.33,"friends":1.44,"followers":1.44,"question":1.82,"marks":2.89,"follower":1.44,"friend":1.44,"ratio":4.33,"exclamation":2.89,"contains":2.65,"mark":2.89,"media":1.44,"colon":1.44,"happy":1.44,"emoticon":2.89,"location":1.82,"sad":1.44,"uppercase":1.44,"chars":1.44,"pos":1.44,"senti":2.89,"neg":1.44,"age":1.44,"slangs":1.44,"verified":1.44,"nouns":1.44,"wot":2.89,"score":1.24,"pers":4.33,"pron":4.33,"degree":1.82,"centrality":2.89,"harmonic":2.89,"centralit":2.89,"alexa":10.10,"country":2.89,"rank":4.55,"readability":1.44,"delta":2.89,"retweets":1.44,"popularity":2.89,"hashtags":1.44,"reach":1.44,"external":1.44,"mentions":1.44,"urls":1.44,"classifier":5.77,"build":1.92,"br":5.54,"cl":15.87,"ag":7.21,"agreement":10.10,"agreed":8.66,"samples":6.14,"resulted":2.89,"tot":7.21,"entire":4.33,"set":2.92,"initial":1.86,"training":3.91,"extending":4.33,"txt":7.21,"json":4.97,"format":3.85,"annotation":5.77,"annotations":5.77,"used":1.52,"testing":1.86,"class":1.86,"quot":14.78,"id":2.57,"label":4.55,"event":2.73,"feature":3.04,"extraction":1.44,"new":1.03,"doubleverifybagging":2.89,"dvb":1.44,"setverbose":1.44,"boolean":1.82,"false":1.82,"average":1.82,"results":1.25,"retraining":7.21,"default":2.49,"disagreed":5.77,"without":1.24,"bagging":5.77,"setrunconcatenated":1.44,"simple":1.44,"concatenation":1.44,"setclassifier":1.44,"rf":1.44,"lg":1.44,"logistic":1.44,"tweetverificationmain":1.44,"line":2.17,"arguments":2.16,"tweetsfile":1.44,"path":2.06,"containing":3.91,"objects":1.44,"twitter":4.33,"api":1.44,"folder":3.03,"optional":2.73,"stored":1.74,"value":1.67,"current":1.86,"directory":1.25,"output":1.08,"tweetsfeats":2.89,"one":1.67,"per":2.06,"userfeats":2.89,"trainlabels":1.44,"labels":1.44,"items":1.82,"testlabels":1.44,"outputfolder":1.44,"averageresults":1.44,"accuracy":2.16,"correctly":1.44,"classified":1.44,"number":1.24,"overall":2.89,"predictions":1.03,"detect":1.44,"misleading":2.89,"boididou":2.89,"christina":2.89,"papadopoulos":1.30,"symeon":1.30,"apostolidis":2.89,"lazaros":2.89,"yiannis":1.24,"acm":1.82,"international":1.12,"retrieval":1.12,"pages":1.82,"zampoglou":1.44,"markos":1.44,"papadopoulou":2.89,"olga":2.89,"journal":1.03,},
+ELIXIR_BFSP_Odyssey: {"odyssey":7.21,"biodiversity":1.44,"norway":1.44,"class":1.24,"quot":1.52,"remotes":2.89,"bfsp":1.44,"npechl":1.44,"mbiog":1.44,"license":1.04,"website":1.44,"means":1.44,"conduct":1.44,},
+G_Class: {"conquer":1.44,"application":1.03,"grid":1.24,"protein":3.11,"classification":4.33,"always":1.44,"one":1.67,"functional":1.44,"proteins":1.44,"enabled":1.44,"presence":1.44,"motifs":4.33,"chains":1.44,"correlation":2.89,"obvious":1.44,"coexist":1.44,"chain":1.44,"combined":1.44,"complexity":1.44,"consuming":1.44,"solution":1.44,"lies":1.44,"procedure":1.82,"gclass":1.44,"methodology":2.89,"sets":1.82,"preserving":1.44,"separate":1.44,"rules":2.89,"experiments":1.67,"considerable":1.44,"increase":1.44,"speed":1.44,"accuracy":1.44,"improvement":1.44,"observed":1.44,"moreover":1.44,"demanding":1.44,"internal":1.44,"independency":1.44,"adaptability":1.44,"friendly":1.44,"adoption":1.44,},
+Goedel_numbering: {"mybinder":1.44,"org":1.41,"godel":8.66,"numbering":5.77,"biological":1.86,"sequences":1.44,"numbers":2.73,"ipynb":1.44,"opensource":1.44,"licenses":1.24,"mit":1.21,"material":1.44,"license":1.04,"arxiv":2.73,"argyris":1.44,"nicolaidis":1.44,"fotis":1.44,"del":1.44,"input":1.61,"stored":2.61,"plots":8.66,"project":1.34,"outputs":1.92,"lit":1.44,"stuff":4.33,"execute":1.12,"line":1.74,"install":1.06,"quot":5.30,"seqinr":1.44,"mass":1.44,"combinat":1.44,"microseq":1.44,"run":1.70,"git":1.25,"strong":5.17,"samples":1.67,"ebi":1.82,"ac":1.82,"uk":1.82,"arrayexpress":1.82,"experiments":1.12,"mtab":5.46,"rna":1.44,"seq":1.24,"dataset":1.56,"fastq":1.44,"gz":1.82,"directoy":4.33,"analysis":1.44,"specifying":2.89,"specify":2.73,"depending":1.82,"statistical":1.82,"array":1.82,"inside":2.23,"directory":1.67,"biom":2.89,"fasta":1.24,"rda":1.44,},
+GridCG: {"grid":1.86,"cg":1.44,"scalable":1.44,"computing":1.44,"omparative":1.44,"enomics":1.44,"tool":1.44,"aiming":1.44,"similarity":1.86,"detection":1.44,"employing":1.44,"offered":1.44,"egi":2.89,"management":1.44,"nodes":1.82,"automatic":1.82,"submission":1.44,"jobs":1.44,"worker":1.44,"failures":1.44,"resubmission":1.44,"extensible":1.44,"pair":1.44,"infered":1.44,"blast":2.16,"cgi":1.44,"scenario":1.44,},
+IgIDivA: {"igidiva":18.76,"immunoglobulin":1.82,"intraclonal":2.89,"diversification":2.89,"analysis":1.08,"written":1.03,"shiny":1.86,"com":1.28,"input":1.61,"clonotypes":1.44,"computation":1.44,"grouped":1.44,"nt":1.44,"found":1.44,"rpubs":1.44,"laura":1.44,"zara":1.44,"scripts":1.30,"freely":1.44,"downloaded":1.03,"laurazara":2.89,"installed":1.54,"cran":1.03,"macos":1.44,"linux":1.44,"packages":9.17,"need":2.16,"session":1.82,"class":1.24,"install":7.77,"quot":17.43,"shinyfiles":1.44,"pdftools":1.44,"purrr":1.44,"dt":1.44,"bslib":1.44,"shinyhelper":1.44,"rgenetics":2.89,"ggsci":1.44,"tidygraph":1.44,"ggraph":1.44,"igraph":1.44,"rstatix":2.89,"shinyvalidate":2.89,"folder":1.14,"app":4.55,"press":1.44,"button":1.44,"conda":2.23,"miniconda":1.82,"yml":1.67,"downloading":1.44,"opened":1.44,"rscript":1.44,"direct":1.44,},
+InterTads: {"intertads":2.89,"dna":1.82,"methylation":2.89,"expression":1.44,"mutation":1.44,"physical":1.44,"chromatin":1.44,"topologically":1.44,"associating":1.44,"domains":1.44,"tads":1.44,"git":1.67,"scm":1.44,"chronic":1.44,"lymphocytic":1.44,"leukemia":1.44,"deposited":1.44,"ebi":1.82,"arrayexpress":1.82,"embl":1.44,"accession":1.44,"mtab":1.82,"license":1.04,},
+Intermediate_CNN_Features: {"feature":1.74,"extraction":2.89,"com":2.23,"chapter":1.44,"near":1.44,"duplicate":1.44,"video":6.49,"retrieval":1.12,"aggregating":2.89,"intermediate":3.11,"cnn":5.46,"layers":4.33,"given":1.12,"input":1.21,"one":1.67,"frame":1.82,"sampled":1.44,"descriptor":2.89,"activations":1.44,"convolution":1.44,"trained":1.24,"convolutional":1.44,"network":2.79,"maximum":1.44,"activation":2.89,"convolutions":1.44,"layer":4.33,"generate":1.12,"compact":1.44,"vector":4.33,"concatenated":1.44,"python":1.25,"caffe":10.10,"tensorflow":3.60,"class":2.80,"language":1.44,"bash":1.82,"github":1.94,"mklab":1.92,"iti":2.73,"features":1.92,"provide":1.30,"path":2.06,"image":2.57,"supported":1.12,"architectures":2.89,"selected":1.67,"framework":1.52,"googlenet":7.21,"vgg":3.64,"resnet":1.82,"inception":1.44,"downloads":1.44,"bvlc":5.77,"zoo":1.44,"slim":2.89,"output":1.08,"generated":1.25,"depends":1.44,"list":2.49,"npy":1.82,"axis":1.44,"prototxt":2.89,"deploy":1.44,"caffemodel":2.89,"kordopatis":1.24,"zilos":1.24,"giorgos":1.24,"strong":2.22,"visil":1.44,"ndvr":1.82,"dml":1.82,"fivr":1.44,"license":1.04,},
+JGNN: {"jitpack":2.89,"mklab":1.44,"iti":1.37,"jgnn":7.21,"com":1.28,"machine":1.03,"graph":1.44,"neural":2.73,"networks":1.86,"native":4.33,"java":2.73,"gnns":1.44,"relational":1.44,"small":1.44,"paradigm":1.44,"require":1.44,"dedicated":1.44,"firmware":1.44,"gradle":1.44,"maven":1.44,"lightweight":1.44,"views":1.44,"simd":1.44,"parallelized":1.44,"batching":1.44,"neuralang":1.44,"scripting":1.44,"definitions":1.44,"clarifications":1.44,"article":1.12,"issn":1.44,"sciencedirect":1.44,"science":1.44,"pii":1.44,"emmanouil":1.44,"krasanakis":1.44,},
+MAI_BIAS: {"mai":12.98,"bias":14.43,"modules":5.59,"local":1.86,"runer":1.44,"mammoth":12.26,"eu":4.35,"github":2.26,"io":1.37,"commons":4.35,"com":1.59,"toolkit":1.86,"fairness":2.16,"etc":1.24,"across":1.37,"modalities":1.44,"like":1.61,"tabular":1.44,"images":1.03,"repository":1.85,"holds":2.89,"runner":1.44,"python":4.59,"ai":1.24,"system":1.03,"time":1.54,"seek":1.44,"making":1.24,"project":1.00,"supporting":1.44,"decorators":2.89,"desktop":4.33,"machine":1.03,"make":1.03,"strong":1.48,"sure":1.82,"install":8.47,"launch":8.66,"app":6.37,"class":3.73,"language":2.16,"bash":2.28,"need":1.44,"version":1.25,"pip":1.03,"try":2.89,"boostrapping":1.44,"githubusercontent":1.44,"dev":1.82,"sh":2.49,"amp":2.89,"missing":4.33,"take":1.44,"details":3.53,"summary":7.21,"sudo":30.30,"apt":30.30,"ppa":2.89,"deadsnakes":1.44,"update":2.89,"venv":5.77,"wsl":1.82,"likely":1.82,"errors":1.44,"importerror":1.44,"libgl":1.44,"cannot":1.44,"shared":1.44,"object":1.44,"due":1.12,"environment":1.54,"font":1.44,"needed":1.44,"ui":1.44,"element":1.44,"fonts":2.89,"noto":1.44,"color":1.44,"emoji":1.44,"symbola":1.44,"libxkbcommon":2.89,"libxkbfile":1.44,"reinstall":1.44,"wayland":1.44,"libxcb":4.33,"never":1.44,"opens":1.44,"hypdrate":1.44,"crashes":1.44,"nonetheless":1.44,"acceleration":1.44,"starting":1.44,"remedy":1.44,"safe":1.44,"illegal":1.44,"encountered":1.44,"error":1.44,"least":1.44,"mismatch":1.44,"matching":1.44,"ideally":1.44,"brew":1.44,"vscode":1.44,"quot":37.89,"name":1.74,"debugger":1.44,"type":2.23,"debugpy":5.77,"request":5.77,"program":2.89,"console":2.89,"integratedterminal":2.89,"justmycode":5.77,"false":3.64,"cwd":2.89,"workspacefolder":4.33,"pythonpath":1.44,"module":1.82,"cli":1.44,"license":1.04,"icons":5.77,"released":1.82,"tabler":4.33,"kfp":4.33,"adjusted":1.44,"handle":1.44,"additional":1.44,"interoperability":1.44,"demonstrator":1.44,"metaprogramming":1.44,"kubeflow":1.44,},
+Mongoose: {"perturbation":7.21,"modelling":5.77,"single":2.09,"cell":4.11,"molecular":1.44,"elicited":1.44,"knockouts":1.44,"chemical":1.44,"compounds":1.44,"biological":1.24,"stimulants":1.44,"health":1.44,"confounded":1.44,"explainability":1.44,"statistical":1.82,"uncertainty":1.44,"dl":1.82,"extreme":1.44,"hyperparameter":1.44,"multi":2.06,"omic":4.33,"mongoose":5.77,"objective":1.44,"enhancing":1.44,"complex":2.16,"datasets":1.17,"mtl":2.89,"unitednet":4.33,"identification":1.82,"cross":1.82,"modal":2.89,"sharpley":1.44,"shap":1.82,"ii":2.89,"like":1.21,"scing":1.44,"genki":1.44,"reconstruct":1.44,"perturb":2.89,"type":1.67,"grns":2.89,"encoder":1.44,"decoder":1.44,"discriminator":1.44,"approximates":1.44,"assumptions":1.44,"hence":1.44,"claim":1.44,"biologically":1.44,"decisions":1.44,"conducting":1.44,"ensuing":1.44,"digital":2.89,"kos":2.89,"reverse":1.44,"engineered":1.44,"associations":1.82,"spatial":2.16,"showcase":1.44,"mrna":1.82,"protein":1.24,"seq":1.24,"crispr":1.44,"knock":1.44,"outs":1.44,"dbit":2.89,"mouse":1.44,"embryo":1.44,"niche":1.44,"expected":1.44,"play":1.44,"pivotal":1.44,"roles":1.44,"silico":1.44,"grn":1.44,"anticipate":1.44,"perturbational":1.44,"insights":1.44,"closer":1.44,"highlighting":1.44,"critical":1.44,"signalling":1.44,"potential":1.44,"translational":1.44,"sort":1.44,"ggeorav":1.44,"certh":1.44,"inab":1.44,"lists":1.44,},
+Multimedia_Geotagging: {"multimedia":9.38,"geotagging":21.64,"contains":2.27,"estimate":4.33,"geographic":1.44,"location":3.64,"based":2.58,"textual":1.44,"content":2.23,"approach":2.06,"described":1.67,"paper":2.06,"researchgate":1.44,"text":2.57,"language":3.97,"models":2.40,"feature":3.04,"mining":2.73,"main":1.74,"refined":1.44,"model":3.04,"selection":1.82,"weighting":4.33,"schemes":1.44,"heuristic":1.44,"improves":1.44,"finer":2.89,"granularities":1.44,"geographical":2.89,"tag":1.82,"tags":1.44,"titles":1.44,"locations":1.44,"massive":1.44,"amount":1.44,"geotagged":1.44,"images":2.57,"included":2.73,"training":1.67,"set":2.92,"order":1.37,"query":2.89,"image":3.08,"test":1.82,"two":1.37,"processing":1.82,"offline":2.89,"online":2.89,"apply":1.44,"decoding":1.44,"lowercase":1.44,"transformation":1.44,"tokenization":1.44,"accents":1.44,"punctuations":1.44,"discard":1.44,"terms":7.21,"numerics":1.44,"less":1.44,"characters":1.44,"surface":1.44,"rectangular":1.44,"cells":1.82,"side":2.89,"length":1.12,"calculate":2.73,"term":15.87,"cell":4.63,"probabilities":1.82,"users":3.35,"used":2.65,"inside":1.67,"locality":11.54,"score":1.86,"every":4.63,"neighbor":1.44,"final":3.11,"formed":1.44,"greater":1.44,"zero":1.44,"spatial":5.05,"entropy":11.54,"values":1.37,"shannon":1.44,"formula":1.44,"weights":5.77,"derives":1.82,"gaussian":1.44,"weight":4.33,"relative":1.44,"position":1.44,"combine":1.44,"estimation":7.21,"probability":2.73,"mlc":8.66,"produce":1.44,"multiple":2.28,"resolution":4.55,"grids":8.66,"different":1.37,"result":1.82,"similarity":1.86,"search":2.89,"similar":1.82,"center":1.44,"gravity":1.44,"possible":1.44,"run":1.02,"project":1.00,"necessary":1.44,"argument":3.64,"github":3.24,"com":3.51,"socialsensor":4.33,"blob":3.91,"master":3.91,"config":1.44,"properties":1.82,"following":1.06,"instruction":1.82,"br":2.58,"imput":1.44,"webscope":1.44,"sandbox":1.44,"yahoo":1.44,"catalog":1.44,"php":1.44,"datatype":1.44,"process":1.92,"algorithm":1.24,"folder":3.79,"named":5.77,"termcellprobs":1.44,"scale":2.89,"appropriately":1.44,"class":1.24,"lon":4.33,"lat":4.33,"prob":4.33,"actual":1.44,"cellx":11.54,"probable":1.44,"longitude":4.33,"latitude":4.33,"id":1.54,"scheme":1.44,"containing":2.23,"respectively":1.24,"row":3.64,"separated":2.49,"tab":2.16,"resultslm":5.77,"created":1.74,"mlcs":2.89,"imageid":1.44,"corresponds":1.44,"conf":1.44,"evid":1.44,"confidence":1.44,"evidences":1.44,"lead":1.44,"estimated":4.33,"granularity":2.89,"technique":2.16,"mg":1.44,"cs":1.44,"fs":1.82,"stands":1.44,"coarser":2.89,"conclusion":1.44,"processes":1.44,"temp":1.44,"mlg":1.44,"evaluation":2.40,"framework":1.14,"mklab":4.33,"iti":5.01,"tree":1.30,"src":1.82,"java":2.73,"gr":1.74,"implemetations":1.44,"sampling":8.66,"strategies":2.16,"acm":1.82,"cfm":1.44,"doid":1.44,"mmcommons":1.44,"executed":1.44,"additionally":1.44,"samples":2.23,"zip":1.44,"collections":1.44,"building":1.12,"concepts":2.89,"keep":1.44,"uniform":2.89,"involve":1.44,"selections":1.44,"permutations":1.44,"demo":4.33,"storm":2.89,"kordopatis":1.86,"zilos":1.86,"giorgos":1.86,"papadopoulos":1.30,"symeon":1.30,"proceedings":1.44,"license":1.38,"contact":1.44,},
+Mutations_Meta_Analyser: {},
+Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning: {"tensorflow":1.03,"paper":1.54,"com":2.55,"iccv":1.82,"workshops":1.44,"kordopatis":1.86,"zilos":1.86,"near":2.89,"duplicate":2.89,"video":13.71,"retrieval":2.23,"deep":1.86,"metric":2.73,"learning":1.67,"training":1.12,"evalutation":1.44,"dml":6.37,"network":2.79,"ndvr":2.73,"triplets":15.87,"generated":1.67,"triplet":11.54,"generator":2.73,"trained":1.86,"displayed":1.44,"evaluation":4.33,"precision":1.44,"map":1.82,"presicion":1.44,"recall":1.44,"curve":4.33,"pr":2.89,"dataset":3.90,"yugangjiang":1.44,"info":1.44,"vcdb":14.43,"cc":8.19,"web":5.05,"python":2.50,"repo":1.44,"class":5.28,"language":2.89,"bash":3.64,"github":1.94,"mklab":2.89,"iti":3.64,"install":1.06,"requirements":1.03,"txt":1.92,"generation":1.82,"process":1.44,"global":7.21,"feature":2.17,"br":1.11,"output":4.69,"dir":2.73,"features":11.06,"npy":13.65,"follows":1.44,"extract":1.44,"already":1.44,"extracted":1.12,"intermediate":3.11,"cnn":4.55,"id":1.03,"path":3.60,"py":2.28,"drive":1.82,"usp":1.44,"sharing":1.44,"train":3.11,"providing":1.24,"model":4.34,"set":2.50,"injected":1.44,"fusion":2.89,"early":1.44,"vgg":1.82,"late":1.44,"giorgos":1.24,"iccvw":1.44,"strong":2.22,"visil":1.44,"similarity":1.24,"fivr":2.16,"license":1.04,},
+Odysseus: {"odysseus":5.77,"versatile":2.89,"high":1.03,"performance":1.44,"optimizing":1.44,"bioinformatics":1.67,"parallelization":2.73,"hybrid":1.44,"cloud":2.89,"environments":1.44,"workflows":1.24,"optimize":1.44,"resource":1.82,"allocation":1.44,"computational":1.03,"resources":1.86,"comprising":1.44,"solutions":1.44,"well":1.24,"hpc":1.44,"infrastructures":1.44,"general":1.44,"attempts":1.44,"principles":1.44,"cost":1.44,"introducing":1.44,"achieving":1.44,"utilization":1.44,},
+UMIc: {"umic":10.10,"framework":1.14,"project":2.34,"new":1.03,"umi":15.87,"deduplication":1.44,"correction":1.44,"nucleotide":1.44,"quality":1.82,"class":1.24,"quot":5.30,"table":1.24,"stringdist":1.44,"pryr":1.44,"biostrings":1.44,"shortread":1.44,"github":1.62,"com":1.59,"biodataanalysisgroup":2.28,"umisproject":5.77,"casesworkflows":1.44,"set":1.25,"tree":1.30,"master":1.67,"folder":2.27,"input":4.02,"parameters":1.44,"outputs":1.92,"purposes":1.44,"corresponding":1.12,"icludes":1.44,"fastq":3.61,"user":1.25,"must":2.49,"output":1.80,"filepaths":1.44,"inputs":1.82,"paireddata":1.44,"variable":2.89,"indicates":1.82,"whether":1.82,"paired":1.44,"umilocation":1.44,"located":1.44,"umilength":1.44,"length":1.12,"sequence":2.79,"sequencelength":1.44,"read":2.89,"countscutoff":1.44,"min":1.44,"counts":1.44,"cleaning":1.44,"umidistance":1.44,"max":2.89,"distance":2.89,"merging":2.89,"sequencedistance":1.44,"inputsfolder":1.44,"name":1.30,"filepath":1.82,"outputsfolder":1.44,"provided":1.03,"assumed":1.44,"placed":1.44,"genarated":1.44,"protocol":1.44,"fulfil":1.44,"named":1.44,"added":2.89,"corrected":2.89,"suffix":2.89,"sequences":1.92,"worth":1.44,"mentioning":1.44,"id":1.03,"information":1.12,"return":1.44,"wiki":1.44,"license":1.04,},
+VB_Mitigator: {"align":2.16,"center":1.44,"left":1.44,"mammoth":3.61,"eu":1.86,"io":1.37,"commons":1.24,"index":1.24,"html":1.03,"bias":14.43,"fairness":2.16,"mitigation":9.38,"attribute":2.16,"multiple":1.37,"hr":2.79,"visual":8.19,"mitigator":17.31,"open":1.37,"source":1.44,"framework":2.27,"designed":2.73,"empower":1.44,"researchers":5.05,"computer":2.23,"vision":2.23,"codebase":4.33,"comprehensive":2.89,"environment":2.06,"easily":2.89,"implement":2.89,"evaluate":1.44,"existing":1.82,"methods":12.98,"increasing":1.44,"awareness":1.44,"ai":1.86,"systems":2.73,"robust":1.44,"facilitate":1.44,"development":1.44,"approaches":10.10,"vb":12.98,"serves":1.44,"offering":1.44,"collection":1.44,"established":1.82,"utilized":1.44,"allowing":1.44,"replicate":2.89,"understand":1.44,"extensibility":2.89,"exploit":1.44,"custom":3.64,"tailored":1.44,"flexibility":1.44,"enabling":1.44,"easy":4.33,"new":1.54,"performance":1.44,"comparison":2.89,"facilitates":1.44,"state":2.16,"art":2.16,"aim":1.44,"research":1.92,"domain":1.44,"providing":1.24,"allows":1.44,"methodologies":1.44,"encourage":1.44,"strong":13.29,"platform":1.82,"evaluating":1.12,"empowers":1.44,"engineers":1.44,"industry":1.44,"fairer":1.44,"benchmark":1.44,"innovate":1.44,"real":1.12,"world":1.82,"badd":10.10,"mavias":2.89,"flac":2.89,"integrate":1.44,"datasets":1.17,"minimal":1.44,"effort":1.44,"baselines":4.33,"metrics":1.44,"bridge":1.44,"reduce":1.44,"face":1.44,"recognition":1.44,"cv":1.44,"accelerates":1.44,"supports":1.24,"reproducibility":1.82,"prebuilt":1.44,"flexible":1.44,"experimentation":1.44,"extend":1.44,"agnostic":1.44,"logs":2.89,"fair":1.44,"rapid":1.44,"prototyping":1.44,"quickly":1.44,"class":2.80,"language":1.08,"bash":1.82,"gsarridis":2.89,"pip":1.03,"conda":2.23,"create":1.44,"virtual":1.82,"install":1.06,"activate":1.12,"utkface":5.77,"log":1.44,"best":1.44,"pth":2.89,"complete":1.44,"article":2.23,"title":1.74,"advancing":1.44,"author":1.67,"sarridis":4.55,"ioannis":2.40,"koutlis":5.77,"christos":11.54,"papadopoulos":1.74,"symeon":1.74,"diou":5.77,"journal":2.06,"arxiv":5.46,"preprint":2.16,"year":1.74,"aware":1.44,"suppressing":1.44,"ieee":1.24,"transactions":1.44,"mitigate":1.44,"horizon":1.44,"europe":1.44,"grant":4.33,"elias":1.44,"elliot":1.44,},
+ViSiL: {"contains":2.65,"tensorflow":2.06,"paper":3.08,"com":2.55,"iccv":1.82,"kordopatis":1.86,"zilos":1.86,"visil":12.98,"fine":3.64,"grained":3.64,"spatio":4.33,"temporal":5.77,"video":29.58,"similarity":9.94,"learning":1.25,"calculation":2.73,"similarities":4.33,"query":12.98,"database":7.21,"videos":12.43,"given":1.12,"evaluation":1.92,"reproduce":2.89,"achieved":1.44,"frame":2.73,"function":2.79,"respects":1.44,"structure":1.12,"learned":1.44,"considers":1.44,"pytorch":1.82,"github":1.94,"mklab":1.92,"iti":3.19,"python":2.09,"repo":1.44,"class":7.77,"language":3.97,"bash":4.10,"install":1.76,"pip":1.54,"txt":2.40,"download":1.44,"unzip":2.89,"pretrained":2.89,"model":6.08,"wget":1.44,"ndd":2.89,"gr":1.30,"ckpt":3.64,"zip":1.44,"want":1.44,"backbone":2.89,"network":2.23,"used":1.89,"avr":1.44,"tensoflow":2.89,"probability":1.82,"dm":2.89,"sonnet":2.89,"id":7.19,"path":4.11,"corresponding":1.12,"example":1.95,"wrc":4.33,"queries":15.87,"jw":4.33,"run":1.36,"calculate":5.46,"py":1.82,"dir":4.55,"faster":1.44,"load":6.21,"gpu":4.55,"memory":1.82,"adding":1.44,"flag":2.73,"stored":2.17,"output":1.44,"json":1.24,"dictionary":2.89,"keys":1.44,"dataset":3.12,"quot":10.61,"nao":1.44,"name":1.30,"default":4.35,"extraction":1.44,"options":4.33,"resnet":3.64,"candidate":1.44,"frames":2.89,"chamfer":4.33,"symmetric":1.44,"batch":7.21,"sz":5.77,"number":2.49,"threads":4.33,"loading":1.44,"cc":1.82,"web":1.44,"retrieval":2.23,"fivr":5.77,"incident":1.44,"pascal":1.44,"inrialpes":1.44,"fr":1.44,"evve":4.33,"based":1.85,"activitynet":2.89,"pattern":6.37,"filename":1.82,"extension":1.44,"replaces":1.44,"unix":1.44,"style":1.44,"pathname":1.44,"expansion":1.44,"youtube":1.44,"ids":2.89,"belongs":1.44,"basename":1.44,"particular":1.44,"providing":1.24,"toy":1.44,"import":1.82,"two":1.37,"target":7.21,"extract":2.16,"features":3.37,"thanks":1.44,"theycallmeloki":2.89,"dockerfile":4.33,"setup":1.44,"docker":5.46,"container":2.89,"image":1.03,"gpus":1.44,"colab":2.89,"notebook":1.44,"citing":1.44,"giorgos":1.24,"cvf":1.44,"strong":1.48,"mever":1.44,"team":1.44,"distill":1.44,"dns":1.44,"efficiency":1.44,"license":1.04,},
+align_paths: {"decomposition":1.44,"species":1.44,"artificial":1.44,"worldscientific":1.44,"recsys":1.44,"journalcode":1.44,"ijait":1.44,},
+fairbench: {"mammoth":11.54,"eu":4.97,"github":2.59,"io":4.10,"commons":4.35,"index":1.86,"html":4.11,"fairbench":18.76,"readthedocs":1.44,"psf":1.44,"black":1.44,"part":1.24,"mai":3.61,"bias":6.49,"low":1.86,"toolkit":4.35,"fairness":4.33,"analysis":1.44,"mitigation":1.44,"coding":1.12,"etc":1.24,"across":1.37,"modalities":1.44,"tabular":3.61,"strong":5.91,"ml":2.16,"scientists":1.82,"python":2.50,"ai":3.11,"vision":1.67,"auditors":1.82,"standardized":2.16,"traceable":1.82,"reports":2.49,"datasets":1.17,"time":1.03,"policymakers":1.82,"higher":2.16,"level":1.86,"perspective":1.44,"imported":1.44,"offer":1.44,"exploration":1.86,"metrics":1.44,"organize":1.44,"many":1.44,"viewed":1.44,"formats":1.44,"browser":1.44,"ongoing":1.44,"reporting":2.89,"developers":1.44,"eventually":1.44,"technical":5.77,"background":1.44,"measures":4.33,"though":1.44,"measure":1.44,"computations":4.33,"industrial":1.44,"let":1.44,"users":1.67,"quantities":1.44,"leading":1.44,"problematic":1.44,"focuses":1.44,"miss":1.44,"bigger":1.44,"picture":1.44,"accompanied":1.44,"caveats":1.44,"recommendations":1.44,"example":1.17,"supports":1.24,"others":1.44,"multiclass":1.44,"box":1.44,"llm":2.89,"experience":1.44,"stacks":1.44,"pandas":1.82,"numpy":1.44,"environment":1.03,"functionalities":1.44,"immediate":1.44,"non":1.86,"people":1.44,"simpler":1.44,"blocks":1.44,"br":4.06,"stamps":2.89,"multivalue":1.44,"multiattribute":1.44,"backtrack":1.44,"filter":2.89,"reorganize":1.44,"compatible":2.89,"jax":1.44,"transformers":1.44,"ollama":1.44,"strives":1.44,"release":1.44,"compatibility":1.44,"delays":1.44,"usually":1.44,"language":1.08,"quickstart":1.44,"test":1.37,"discord":2.89,"gg":1.44,"wwqwfsjswz":1.44,"invite":1.44,"benchmarks":2.89,"without":1.24,"writing":1.82,"see":1.48,"examples":2.89,"workflow":1.44,"share":2.89,"class":1.55,"import":1.82,"fb":18.76,"yhat":5.77,"bench":5.77,"compas":2.89,"size":2.89,"quot":3.03,"sensitive":11.54,"dimensions":2.89,"categories":4.33,"race":2.89,"packed":1.44,"report":2.73,"abroca":4.33,"pairwise":2.89,"maxbarea":1.44,"auc":1.44,"labels":1.44,"float":1.44,"roc":1.44,"show":2.89,"sex":1.44,"intersectional":1.44,"strict":1.44,"investigate":1.44,"horizontal":1.44,"standardizing":1.44,"krasanakis":2.89,"emmanouil":2.89,"measurements":1.44,"explanation":1.44,"aimmes":1.44,"contributors":1.44,"giannis":1.44,"modified":1.44,"originally":1.44,"rebias":1.44,"copyright":1.44,"naver":1.44,"corp":1.44,"modifications":1.44,"mnist":2.89,"rbo":4.33,"changyao":1.44,"chen":1.44,"fallbacks":2.89,},
+k_taxatree: {"taxatree":14.43,"workflow":3.61,"project":3.67,"org":1.06,"predicting":2.89,"labels":2.16,"taxonomic":1.44,"levels":1.44,"kingdom":1.44,"phylum":1.44,"metagenomic":1.44,"model":5.21,"latter":1.82,"accepts":1.44,"input":1.21,"mer":1.82,"count":2.89,"determine":1.24,"appropriate":1.82,"length":2.23,"earth":4.55,"microbiome":5.77,"retrieved":2.89,"github":2.91,"com":2.87,"empdata":2.89,"dataset":2.34,"sequences":2.40,"targeted":1.44,"rrna":1.44,"region":1.44,"split":1.44,"subsets":2.89,"train":1.24,"test":1.82,"validation":5.46,"initial":1.24,"respectefully":1.44,"biodataanalysisgroup":3.64,"tree":2.61,"main":3.04,"emp":8.66,"folder":2.27,"ftp":1.44,"amplicon":2.89,"earthmicrobiome":1.44,"public":1.44,"qiita":1.44,"microbio":1.44,"thompson":1.44,"sanders":1.44,"mcdonald":1.44,"communal":1.44,"reveals":1.44,"multiscale":1.44,"microbial":1.44,"nature":1.44,"quot":11.37,"cluster":1.44,"rfast":1.44,"plyr":1.44,"caret":1.44,"stats":1.44,"ubl":1.44,"splitstackshape":1.44,"mlr":1.44,"mldr":1.44,"hash":1.44,"randomforestsrc":1.44,"scripts":3.91,"perform":1.24,"steps":1.44,"selecting":1.44,"constructing":1.44,"kmer":2.73,"matrix":3.64,"subset":4.33,"detail":1.44,"selection":2.73,"optimal":1.24,"creation":4.33,"features":1.44,"informative":1.44,"hp":1.44,"stratified":1.44,"repeated":1.44,"holdout":1.44,"mtry":2.89,"ntree":2.89,"predict":2.73,"threshold":2.89,"achive":1.44,"macro":1.44,"final":4.97,"unassigned":11.54,"predictions":4.11,"utilizing":1.44,"yet":2.89,"make":1.03,"functions":2.23,"helper":2.89,"creating":2.89,"multilabel":1.44,"machine":1.03,"extra":1.86,"used":1.14,"local":1.86,"usage":1.44,"rest":1.44,"blast":3.61,"results":1.25,"assign":1.44,"taxonomies":1.44,"compare":5.77,"rdp":2.89,"output":1.08,"ram":1.44,"cores":1.44,"approximately":1.44,"days":1.44,"hyperparameters":1.44,"recreate":1.44,"rds":1.44,"fully":1.44,"wiki":1.44,"license":1.04,},
+kmerAnalyzer: {"opensource":1.44,"org":1.41,"licenses":1.24,"mit":1.21,"capable":1.44,"counting":1.44,"mers":1.44,"reasonable":1.44,"values":1.82,"parameter":1.44,"concurrently":1.44,"kmeranalyzer":4.33,"strong":2.22,"python":1.25,"seems":2.89,"pretty":1.44,"well":1.24,"pandas":1.82,"pydata":1.44,"numpy":1.44,"current":1.86,"application":2.06,"fasta":2.49,"input":2.41,"ol":1.92,"execute":1.12,"inside":3.35,"folder":2.27,"mer":7.28,"analyzer":1.44,"output":1.44,"empty":1.44,"otherwise":1.44,"case":1.24,"wil":1.44,"featuresextraction":2.89,"kmax":2.89,"eval":2.73,"factor":4.33,"determines":1.44,"strictness":1.44,"assessment":1.44,"length":2.23,"recommended":1.82,"lie":1.44,"interval":1.44,"value":1.12,"lower":2.89,"properly":1.82,"assuming":1.44,"called":2.89,"filename":1.82,"csv":3.73,"clustdata":1.44,"actually":1.44,"aimed":1.44,"every":2.57,"sequemce":1.44,"represented":1.44,"number":2.49,"times":1.86,"detected":2.89,"sequence":2.79,"heades":1.44,"maps":1.44,"headers":1.44,"id":1.03,"sub":1.44,"represents":1.44,"column":2.89,"fourth":1.44,"remaining":1.44,"appears":2.89,"occurs":1.44,"look":1.44,"lengths":1.44,"executing":1.24,"probably":1.44,"exclude":1.44,"filtering":1.44,"examine":1.44,"isnide":1.44,"direcoty":1.44,"sars":2.16,"cov":2.16,"ncbi":1.82,"license":1.04,},
+lineagespot: {"lineagespot":2.89,"org":1.06,"identify":1.44,"sars":1.44,"cov":1.44,"variant":2.73,"broadinstitute":1.44,"hc":1.44,"articles":1.44,"quot":1.52,"devtools":2.89,"raw":1.44,"inst":1.44,"tsagiopoulou":1.44,"maniou":1.44,"municipal":1.44,"wastewater":1.44,"metropolitan":1.44,"area":1.44,"sci":1.44,"rep":1.44,},
+lncAPNet: {"strong":11.82,"lncapnet":7.21,"activity":2.49,"pasnet":2.73,"apnet":3.64,"framework":1.52,"incorporates":1.44,"rnas":1.44,"lncrnas":1.44,"explainable":2.89,"network":1.12,"based":1.11,"patient":2.89,"stratification":2.89,"supervised":2.89,"clustering":1.44,"transcriptomic":1.82,"computational":1.03,"pipeline":1.54,"hr":2.23,"recently":1.44,"reported":1.44,"br":1.85,"bioinformatics":1.12,"gavriilidis":1.44,"et":2.16,"al":2.16,"xai":1.44,"driven":1.82,"cohorts":1.44,"analysis":1.08,"biological":1.86,"priors":4.33,"concept":1.44,"integrates":1.44,"sjaracne":1.82,"regulatory":2.16,"hoc":1.44,"clinical":1.44,"applications":1.44,"expands":1.44,"toolbox":1.44,"explicitly":1.44,"lncrna":7.21,"mechanisms":1.82,"key":1.44,"extensions":1.44,"include":1.44,"nonlinear":1.44,"interpretation":2.89,"relationships":1.44,"lncrnalyzr":1.44,"evangelista":1.44,"regulons":1.44,"derived":1.44,"enhanced":1.44,"construction":1.82,"planned":1.44,"future":1.44,"improve":1.44,"portability":1.44,"vasileiou":1.44,},
+metaDIEA: {"rna":2.89,"sequencing":2.16,"become":1.44,"standard":1.44,"resolution":1.82,"wide":1.44,"monitoring":2.89,"expression":1.44,"often":1.44,"understanding":1.44,"complex":1.44,"mo":1.44,"lecular":1.44,"driving":1.44,"spanning":1.44,"organ":1.44,"genesis":1.44,"progression":1.44,"many":1.44,"advantages":1.44,"ability":1.44,"capture":1.44,"splicing":1.44,"alternate":1.44,"isoform":4.33,"abundance":1.44,"advantage":1.44,"remains":1.44,"algorithmically":1.44,"computationally":1.44,"emergence":1.44,"even":1.44,"although":1.44,"several":2.16,"algorithms":2.57,"proposed":1.44,"effective":1.44,"differential":1.44,"widely":2.89,"golden":1.44,"standards":1.44,"compounded":1.44,"differences":1.44,"remain":1.44,"poorly":1.44,"maintained":1.44,"strong":3.69,"metadiea":1.44,"meta":1.44,"ifferential":1.44,"soform":1.44,"xpression":1.44,"nalysis":1.44,"integrative":1.44,"ap":1.44,"proach":1.44,"effectively":1.44,"top":1.44,"transcript":1.44,"demonstrate":1.44,"usability":1.44,"simulated":1.44,"organisms":1.44,"conclude":1.44,"strategy":1.44,"outperforms":1.44,"application":1.03,"containers":1.44,},
+miRkit: {"mirkit":8.66,"project":2.34,"input":1.21,"stored":1.30,"scripts":1.30,"output":1.80,"folder":1.52,"execute":1.12,"install":1.06,"required":1.44,"class":1.24,"quot":9.09,"gsubfn":1.44,"yaml":1.82,"lubridate":1.44,"naniar":1.44,"prada":1.44,"complexheatmap":1.44,"multimir":1.44,"limma":1.44,"git":1.25,"github":2.59,"com":2.55,"biodataanalysisgroup":2.73,"functions":1.12,"bellow":1.44,"qc":1.44,"diff":1.44,"fa":1.44,"save":3.64,"pdf":1.44,"image":1.03,"mirnatool":7.21,"tree":1.74,"main":2.17,"inside":1.12,"wrapper":1.44,"initial":1.24,"extra":1.24,"details":1.06,"move":1.82,"checkout":2.89,"correpsonding":2.89,"readme":1.03,"nikopech":3.64,"taken":1.44,"saveimagehigh":2.89,"license":1.04,},
+pygrank: {"fast":1.44,"node":2.16,"ranking":4.33,"algorithms":1.54,"large":1.44,"graphs":1.03,"strong":2.95,"emmanouil":1.44,"krasanakis":1.44,"pygrank":10.10,"upgrade":1.44,"backend":1.44,"matvec":1.44,"practices":1.44,"conditions":1.44,"postprocessing":1.44,"simplify":1.44,"theoretical":1.44,"advancements":1.44,"participating":1.44,"discussions":1.44,"please":1.00,"guidelines":1.44,"bring":1.44,"checklist":1.44,"useful":1.44,"scientific":1.44,"andreas":1.44,"symeonidis":1.44,"month":1.44,"softx":1.82,"publish":1.44,"makes":1.44,"tips":1.44,"relevant":1.44,},
+synth4bench: {"align":5.77,"center":1.44,"hr":5.58,"justify":5.46,"somatic":12.98,"variant":12.74,"calling":6.49,"algorithms":3.60,"essential":1.44,"genomic":2.89,"alterations":2.89,"performance":1.44,"lack":1.82,"ground":3.61,"truth":7.21,"datasets":2.34,"synthetic":17.31,"genomics":8.66,"generation":3.64,"framework":1.14,"benchmarking":5.46,"tumor":2.89,"neat":7.21,"simulator":2.89,"subsequently":1.44,"thoroughly":1.44,"strong":5.17,"gatk":1.82,"freebayes":2.89,"vardict":2.89,"lofreq":2.89,"excellent":1.44,"behavior":1.82,"abstract":2.89,"description":1.44,"installation":2.06,"download":2.89,"execution":1.67,"documentation":2.79,"contribute":1.12,"citation":1.82,"framekwork":1.44,"addresses":1.44,"challenge":1.44,"particularly":1.44,"alle":1.44,"variants":2.89,"goal":1.44,"consistent":1.44,"identifying":2.89,"genetic":1.44,"lesions":1.44,"cancer":1.44,"complicates":1.44,"evaluation":1.44,"overcome":1.44,"mimics":1.44,"genome":1.12,"serving":1.44,"analyses":1.44,"adress":1.44,"types":1.44,"snvs":2.89,"noise":1.44,"indels":1.44,"callers":5.77,"five":1.44,"openly":1.44,"available":1.14,"zenodo":3.73,"org":2.12,"records":1.44,"instructions":1.67,"github":2.59,"com":2.55,"sfragkoul":10.10,"blob":1.67,"main":2.17,"docs":1.86,"userguide":1.82,"md":1.21,"guide":2.89,"conda":1.67,"environment":1.03,"bash":2.28,"ncsa":1.44,"script":1.25,"gen":1.44,"help":1.24,"bam":7.21,"readcount":7.21,"build":1.44,"verify":1.44,"bin":1.44,"encounter":1.44,"issues":1.12,"varscan":2.89,"extra":1.24,"vscan":1.44,"configure":1.44,"plotting":1.44,"visit":1.44,"page":1.44,"submitted":1.44,"biorxiv":2.89,"blockquote":2.89,"fragkouli":7.21,"pechlivanis":4.55,"anastasiadou":5.77,"karakatsoulis":4.33,"orfanou":5.77,"kollia":4.33,"agathangelidis":7.21,"psomopoulos":4.55,"doi":3.34,"tale":1.44,"unfolding":1.44,"space":1.82,"european":1.82,"conference":2.23,"computational":1.54,"biology":5.77,"sep":1.44,"turku":1.44,"finland":1.44,"jun":1.44,"uppsala":1.44,"sweden":1.44,"generating":1.44,"hellenic":1.44,"society":1.44,"hscbb":1.44,"intelligent":1.44,"jul":1.44,"lyon":1.44,"france":1.44,},
+tripr: {"readme":1.03,"rmd":1.44,"edit":1.44,"todo":1.44,"badges":4.33,"start":1.44,"lifecycle":4.33,"stable":2.73,"shields":7.21,"io":1.82,"badge":3.64,"brightgreen":1.44,"svg":8.66,"www":1.48,"org":4.59,"bioc":4.33,"status":2.89,"bioconductor":9.38,"release":1.44,"experiment":3.64,"spatiallibd":8.66,"checkresults":2.89,"devel":2.89,"codecov":4.33,"coverage":1.44,"gh":1.82,"biodataanalysisgroup":2.28,"tripr":10.92,"branch":2.89,"master":1.12,"support":1.44,"last":1.44,"months":1.44,"tagged":2.89,"avg":2.89,"answers":2.89,"per":1.03,"question":1.82,"comments":1.44,"accepted":1.82,"posts":2.89,"github":1.29,"issues":1.67,"zenodo":1.24,"latestdoi":1.44,"cell":1.54,"receptor":3.64,"immunoglobulin":1.82,"check":1.82,"package":1.82,"shiny":1.24,"analytics":1.44,"services":1.44,"antigen":1.44,"bcr":1.44,"ig":1.44,"tr":1.44,"imgt":2.89,"highv":2.89,"quest":2.89,"home":1.44,"analyze":1.44,"samples":1.12,"separately":1.44,"accordingly":1.44,"version":1.25,"installed":1.54,"system":1.03,"cran":1.03,"install":1.06,"enter":1.82,"class":1.86,"language":1.08,"requirenamespace":1.44,"quot":3.03,"biocmanager":2.89,"quietly":1.44,"valid":1.82,"browsevignettes":1.44,},
+};</script>
+    </div>
+  </div>
+
+  <script>
+    const entries = Array.from(document.querySelectorAll('#catalogue .cell'));
+    const input = document.getElementById('search-input');
+    const hint = document.getElementById('search-hint');
+    let debounce;
+
+    /* ── Preview panel ── */
+    const overlay = document.getElementById('preview-overlay');
+    const panel   = document.getElementById('preview-panel');
+    const content = document.getElementById('preview-content');
+    const closeBtn = document.getElementById('preview-close');
+
+    const previewCache = {};
+    function openPreview(box) {
+      const path = box.dataset.preview;
+      const load = previewCache[path]
+        ? Promise.resolve(previewCache[path])
+        : fetch(path)
+            .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+            .then(html => { previewCache[path] = html; return html; });
+      load
+        .then(html => {
+          content.innerHTML = html;
+          overlay.classList.add('is-active');
+          panel.classList.add('is-active');
+        })
+        .catch(() => {
+          content.innerHTML = box.innerHTML;
+          overlay.classList.add('is-active');
+          panel.classList.add('is-active');
+        });
+    }
+
+    function closePreview() {
+      overlay.classList.remove('is-active');
+      panel.classList.remove('is-active');
+    }
+
+    document.querySelectorAll('.box.hoverable').forEach(box => {
+      box.addEventListener('click', () => openPreview(box));
+    });
+
+    closeBtn.addEventListener('click', closePreview);
+    overlay.addEventListener('click', closePreview);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
+
+    /* ── Search ── */
+    function search(raw) {
+      const terms = raw.trim().toLowerCase().split(/\s+/).filter(t => t.length >= 2);
+      if (!terms.length) {
+        entries.forEach(e => { e.style.display = ''; e.style.order = ''; });
+        hint.textContent = '';
+        return;
+      }
+      const scored = entries.map(entry => {
+        const id = entry.id;
+        const kws = kwdata[id] ?? {};
+        let score = 0;
+        for (const term of terms) {
+          let included = false;
+          for (const [kw, weight] of Object.entries(kws)) {
+            if (kw.startsWith(term)) { score += weight; included = true; }
+          }
+          if (!included) return { entry, score: 0 };
+        }
+        return { entry, score };
+      });
+      scored.forEach(s => s.entry.style.display = s.score > 0 ? '' : 'none');
+      const visible = scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score);
+      visible.forEach(({ entry }, i) => entry.style.order = i);
+      const catalogue = document.getElementById('catalogue');
+      catalogue.style.display = 'flex';
+      catalogue.style.flexDirection = 'column';
+      hint.textContent = visible.length
+        ? `Showing ${visible.length} result${visible.length > 1 ? 's' : ''}`
+        : 'No results found';
+    }
+
+    input.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => search(input.value), 100);
+    });
+  </script>
+  </body>
+</html>
