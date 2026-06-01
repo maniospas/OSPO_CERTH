@@ -1,0 +1,47 @@
+% This file contains software entries under # titles.
+% The entries can have any set of emails and URLs.
+
+
+# fairbench
+maniospas@iti.gr
+https://github.com/mever-team/FairBench
+https://fairbench.readthedocs.io/
+
+# JGNN
+maniospas@iti.gr
+https://github.com/MKLab-ITI/JGNN
+
+# MAI-BIAS
+maniospas@iti.gr
+https://mammoth-ai.eu/
+https://github.com/mammoth-eu/mammoth-commons
+
+#VB-Mitigator
+gsarridis@iti.gr
+https://github.com/mever-team/vb-mitigator
+https://vb-mitigator.readthedocs.io/
+
+# Computational Verification
+olgapapa@iti.gr
+https://github.com/MKLab-ITI/computational-verification
+
+# Intermediate CNN Features
+kordogeo@fel.cvut.cz
+https://github.com/MKLab-ITI/intermediate-cnn-features
+
+# Multimedia Geotagging
+kordogeo@fel.cvut.cz
+https://github.com/MKLab-ITI/multimedia-geotagging
+
+# Near-Duplicate Video Retrieval with Deep Metric Learning
+kordogeo@fel.cvut.cz
+https://github.com/MKLab-ITI/ndvr-dml
+
+# pygrank
+maniospas@iti.gr
+https://github.com/MKLab-ITI/pygrank
+https://pygrank.readthedocs.io/en/latest/
+
+# ViSiL
+kordogeo@fel.cvut.cz
+https://github.com/MKLab-ITI/visil
