@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <style>
       img { max-width: 500px; display: none }
-      #search-bar {
-        position: sticky;
-        top: 0;
+      #search-bar-custom {
         z-index: 100;
-        background: white;
         padding: 1rem 0;
         border-bottom: 1px solid #eee;
         margin-bottom: 1rem;
@@ -25,6 +22,7 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       }
+      .container {min-height:100vh!important;}
 
       /* Preview panel */
       #preview-overlay {
@@ -46,58 +44,14 @@
         z-index: 201;
         overflow-y: auto;
         padding: 1.5rem;
+        padding-top: 60px!important;
         box-shadow: -4px 0 24px rgba(0,0,0,0.15);
         transform: translateX(100%);
         transition: transform 0.25s ease;
       }
       #preview-panel.is-active { transform: translateX(0); }
 
-      #preview-panel img { display: block; max-width: 100%; }
-
-      #preview-close {
-        position: sticky;
-        top: 0;
-        float: right;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        font-size: 18px;
-        line-height: 30px;
-        text-align: center;
-        cursor: pointer;
-        z-index: 1;
-        margin-bottom: 0.5rem;
-        display: none; // temporary disable
-      }
-      /* Preview panel */
-      #preview-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.4);
-        z-index: 200;
-      }
-      #preview-overlay.is-active { display: block; }
-
-      #preview-panel {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: min(800px, 90vw);
-        background: white;
-        z-index: 201;
-        overflow-y: auto;
-        padding: 1.5rem;
-        box-shadow: -4px 0 24px rgba(0,0,0,0.15);
-        transform: translateX(100%);
-        transition: transform 0.25s ease;
-      }
-      #preview-panel.is-active { transform: translateX(0); }
-
-      #preview-panel img { display: block; max-width: 100%; }
+      #preview-panel img { display: block; max-width: 100%; display: hide; }
 
       #preview-close {
         position: sticky;
@@ -147,7 +101,6 @@
   <body>
 
   <header id="quarto-header" class="headroom fixed-top">
-    <div id="quarto-search-results"></div>
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
       <div class="navbar-container container-fluid">
         <div class="navbar-brand-container mx-auto">
@@ -155,19 +108,19 @@
             <span class="navbar-title">Open Source Program Office | CERTH</span>
           </a>
         </div>
-        <ul class="navbar-nav navbar-nav-scroll me-auto">
+        <ul class="navbar-nav navbar-nav-scroll me-auto" style="margin-top:-10px!important">
           <li class="nav-item">
             <a class="nav-link" href="../../index.html">
               <span class="menu-text">Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../../docs/index.html" aria-current="page">
+            <a class="nav-link" href="../../docs/index.html" aria-current="page">
               <span class="menu-text">Technical Documentation</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../docs/project/all.html">
+            <a class="nav-link active" href="../../docs/project/all.html">
               <span class="menu-text">Software</span>
             </a>
           </li>
@@ -184,7 +137,7 @@
   </div>
 
   <div class="container">
-    <div id="search-bar">
+    <div id="search-bar-custom">
       <div class="field">
         <div class="control has-icons-left">
           <input class="input is-medium" type="text" id="search-input" placeholder="Search catalogue…">

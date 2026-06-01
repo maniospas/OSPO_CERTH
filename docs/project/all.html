@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <style>
       img { max-width: 500px; display: none }
-      #main#search-bar {
-        position: sticky;
-        top: 0;
+      #search-bar-custom {
         z-index: 100;
-        background: white;
         padding: 1rem 0;
         border-bottom: 1px solid #eee;
         margin-bottom: 1rem;
       }
-      #main.box.hoverable {
+      .box.hoverable {
         transition: transform 0.2s, box-shadow 0.2s;
         cursor: pointer;
         margin-bottom: 6px;
       }
-      #main.box.hoverable:hover {
+      .box.hoverable:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       }
+      .container {min-height:100vh!important;}
 
       /* Preview panel */
       #preview-overlay {
@@ -46,13 +44,14 @@
         z-index: 201;
         overflow-y: auto;
         padding: 1.5rem;
+        padding-top: 60px!important;
         box-shadow: -4px 0 24px rgba(0,0,0,0.15);
         transform: translateX(100%);
         transition: transform 0.25s ease;
       }
       #preview-panel.is-active { transform: translateX(0); }
 
-      #preview-panel img { display: block; max-width: 100%; }
+      #preview-panel img { display: block; max-width: 100%; display: hide; }
 
       #preview-close {
         position: sticky;
@@ -84,55 +83,52 @@
         vertical-align: middle;
       }
     </style>
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9c350b7bc82f97c8c51ea7b7b62f9e22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+    <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+    <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+    <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+    <meta name="quarto:offset" content="../../">
+    <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+    <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+    <script src="../../site_libs/quarto-html/popper.min.js"></script>
+    <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+    <script src="../../site_libs/quarto-html/anchor.min.js"></script>
+    <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+    <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+    <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+    <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../site_libs/bootstrap/bootstrap-9c350b7bc82f97c8c51ea7b7b62f9e22.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
   </head>
   <body>
 
-<header id="quarto-header" class="headroom fixed-top">
-  <div id="quarto-search-results"></div>
-  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-        <a class="navbar-brand" href="../../index.html">
-          <span class="navbar-title">Open Source Program Office | CERTH</span>
-        </a>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+        <div class="navbar-brand-container mx-auto">
+          <a class="navbar-brand" href="../../index.html">
+            <span class="navbar-title">Open Source Program Office | CERTH</span>
+          </a>
+        </div>
+        <ul class="navbar-nav navbar-nav-scroll me-auto" style="margin-top:-10px!important">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <span class="menu-text">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../docs/index.html" aria-current="page">
+              <span class="menu-text">Technical Documentation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../../docs/project/all.html">
+              <span class="menu-text">Software</span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul class="navbar-nav navbar-nav-scroll me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="../../index.html">
-            <span class="menu-text">Home</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="../../docs/index.html" aria-current="page">
-            <span class="menu-text">Technical Documentation</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../docs/project/all.html">
-            <span class="menu-text">Software</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-<section id="main">
   <!-- Preview overlay + panel -->
   <div id="preview-overlay"></div>
   <div id="preview-panel">
@@ -141,7 +137,7 @@
   </div>
 
   <div class="container">
-    <div id="search-bar">
+    <div id="search-bar-custom">
       <div class="field">
         <div class="control has-icons-left">
           <input class="input is-medium" type="text" id="search-input" placeholder="Search catalogue…">
@@ -159,7 +155,7 @@
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="BEEMUS"><article class="box hoverable" data-preview="previews/BEEMUS.html"><h2 class="title mb-0">BEEMUS<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/BEEMUS">🏠 github</a></span>
+<div class="cell p-1" id="BEEMUS"><article class="box hoverable" data-preview="previews/BEEMUS.html"><h2 class="title mb-0">BEEMUS<span style="float:right" class="tag is-light">⭐ 1 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/BEEMUS">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
 </h2>
 <div><div></div>
@@ -187,7 +183,7 @@ BPM (BLAST - Phylogenetic P...</div>
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="Computational_Verification"><article class="box hoverable" data-preview="previews/Computational_Verification.html"><h2 class="title mb-0">Computational Verification<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/computational-verification">🏠 github</a></span>
+<div class="cell p-1" id="Computational_Verification"><article class="box hoverable" data-preview="previews/Computational_Verification.html"><h2 class="title mb-0">Computational Verification<span style="float:right" class="tag is-light">⭐ 9 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/computational-verification">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:olgapapa@iti.gr">🖂 olgapapa@iti.gr</a></span>
 </h2>
 <div><div></div>
@@ -198,7 +194,7 @@ Initialize pa...</td></tr><tr><td><b>+ 7 more</b>&nbsp;&nbsp;</td>
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="ELIXIR_BFSP_Odyssey"><article class="box hoverable" data-preview="previews/ELIXIR_BFSP_Odyssey.html"><h2 class="title mb-0">ELIXIR-BFSP-Odyssey<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/ELIXIR-BFSP-Odyssey">🏠 github</a></span>
+<div class="cell p-1" id="ELIXIR_BFSP_Odyssey"><article class="box hoverable" data-preview="previews/ELIXIR_BFSP_Odyssey.html"><h2 class="title mb-0">ELIXIR-BFSP-Odyssey<span style="float:right" class="tag is-light">⭐ 4 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/ELIXIR-BFSP-Odyssey">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
 </h2>
 <div><div></div>
@@ -261,7 +257,7 @@ This projects contains a large-scale data analysis tool...</div>
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="IgIDivA"><article class="box hoverable" data-preview="previews/IgIDivA.html"><h2 class="title mb-0">IgIDivA<span style="float:right" class="tag is-link is-light"><a href="https://github.com/laurazara/IgIDivA">🏠 github</a></span>
+<div class="cell p-1" id="IgIDivA"><article class="box hoverable" data-preview="previews/IgIDivA.html"><h2 class="title mb-0">IgIDivA<span style="float:right" class="tag is-light">⭐ 1 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/laurazara/IgIDivA">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
 </h2>
 <div><div></div>
@@ -272,7 +268,7 @@ This projects contains a large-scale data analysis tool...</div>
 It requires R (version "4.1"), which can be installed on any operating system from CRAN....</td></tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="InterTads"><article class="box hoverable" data-preview="previews/InterTads.html"><h2 class="title mb-0">InterTads<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/InterTADs">🏠 github</a></span>
+<div class="cell p-1" id="InterTads"><article class="box hoverable" data-preview="previews/InterTads.html"><h2 class="title mb-0">InterTads<span style="float:right" class="tag is-light">⭐ 2 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/InterTADs">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
 </h2>
 <div><div>InterTADs is an open-source tool written in R, 
@@ -291,7 +287,7 @@ discuss what you would like to change.</td></tr><tr><td><b>License</b>&nbsp;&nbs
 License - see the LICENSE file for details</td></tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="Intermediate_CNN_Features"><article class="box hoverable" data-preview="previews/Intermediate_CNN_Features.html"><h2 class="title mb-0">Intermediate CNN Features<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/intermediate-cnn-features">🏠 github</a></span>
+<div class="cell p-1" id="Intermediate_CNN_Features"><article class="box hoverable" data-preview="previews/Intermediate_CNN_Features.html"><h2 class="title mb-0">Intermediate CNN Features<span style="float:right" class="tag is-light">⭐ 63 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/intermediate-cnn-features">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
 </h2>
 <div><div>This repository contains the implementation of the feature extraction process described in
@@ -317,7 +313,7 @@ Install all dependencies...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="JGNN"><article class="box hoverable" data-preview="previews/JGNN.html"><h2 class="title mb-0">JGNN<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/JGNN">🏠 github</a></span>
+<div class="cell p-1" id="JGNN"><article class="box hoverable" data-preview="previews/JGNN.html"><h2 class="title mb-0">JGNN<span style="float:right" class="tag is-light">⭐ 24 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/JGNN">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
 </h2>
 <div><div>Resource efficient machine learning and graph neural networks in native Java.
@@ -331,7 +327,7 @@ Graph Neural Networks (GNNs) are getting more and more popu...</div>
     p...</td></tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="MAI_BIAS"><article class="box hoverable" data-preview="previews/MAI_BIAS.html"><h2 class="title mb-0">MAI-BIAS<span style="float:right" class="tag is-link is-light"><a href="https://mammoth-ai.eu/">🏠 mammoth-ai</a></span>
+<div class="cell p-1" id="MAI_BIAS"><article class="box hoverable" data-preview="previews/MAI_BIAS.html"><h2 class="title mb-0">MAI-BIAS<span style="float:right" class="tag is-light">⭐ 22 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://mammoth-ai.eu/">🏠 mammoth-ai</a></span>
 <span style="float:right" class="tag is-link is-light"><a href="https://github.com/mammoth-eu/mammoth-commons">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
 </h2>
@@ -362,7 +358,7 @@ supporting datatypes and decorators...</td></tr><tr><td><b>+ 4 more</b>&nbsp;&nb
 If you have any questions, please either open an issue or write...</td></tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="Multimedia_Geotagging"><article class="box hoverable" data-preview="previews/Multimedia_Geotagging.html"><h2 class="title mb-0">Multimedia Geotagging<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/multimedia-geotagging">🏠 github</a></span>
+<div class="cell p-1" id="Multimedia_Geotagging"><article class="box hoverable" data-preview="previews/Multimedia_Geotagging.html"><h2 class="title mb-0">Multimedia Geotagging<span style="float:right" class="tag is-light">⭐ 13 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/multimedia-geotagging">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
 </h2>
 <div><div>Multimedia Geotagging
@@ -379,7 +375,7 @@ This repository contains the implementation of algorithms that estimate the geog
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning"><article class="box hoverable" data-preview="previews/Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning.html"><h2 class="title mb-0">Near-Duplicate Video Retrieval with Deep Metric Learning<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/ndvr-dml">🏠 github</a></span>
+<div class="cell p-1" id="Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning"><article class="box hoverable" data-preview="previews/Near_Duplicate_Video_Retrieval_with_Deep_Metric_Learning.html"><h2 class="title mb-0">Near-Duplicate Video Retrieval with Deep Metric Learning<span style="float:right" class="tag is-light">⭐ 120 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/ndvr-dml">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
 </h2>
 <div><div></div>
@@ -418,7 +414,7 @@ python evaluation...</td></tr><tr><td><b>Citation</b>&nbsp;&nbsp;</td>
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="UMIc"><article class="box hoverable" data-preview="previews/UMIc.html"><h2 class="title mb-0">UMIc<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/UMIc">🏠 github</a></span>
+<div class="cell p-1" id="UMIc"><article class="box hoverable" data-preview="previews/UMIc.html"><h2 class="title mb-0">UMIc<span style="float:right" class="tag is-light">⭐ 9 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/UMIc">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
 </h2>
 <div><div>UMIc is a framework, written in R, implementing a new proposed method for UMI deduplication and reads correction. The method works at nucleo...</div>
@@ -434,7 +430,7 @@ git clone https://github.com/BiodataAnalysisGroup/UMIc
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="VB_Mitigator"><article class="box hoverable" data-preview="previews/VB_Mitigator.html"><h2 class="title mb-0">VB-Mitigator<span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/vb-mitigator">🏠 github</a></span>
+<div class="cell p-1" id="VB_Mitigator"><article class="box hoverable" data-preview="previews/VB_Mitigator.html"><h2 class="title mb-0">VB-Mitigator<span style="float:right" class="tag is-light">⭐ 3 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/vb-mitigator">🏠 github</a></span>
 <span style="float:right" class="tag is-link is-light"><a href="https://vb-mitigator.readthedocs.io/">🏠 readthedocs</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:gsarridis@iti.gr">🖂 gsarridis@iti.gr</a></span>
 </h2>
@@ -444,7 +440,7 @@ git clone https://github.com/BiodataAnalysisGroup/UMIc
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="ViSiL"><article class="box hoverable" data-preview="previews/ViSiL.html"><h2 class="title mb-0">ViSiL<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/visil">🏠 github</a></span>
+<div class="cell p-1" id="ViSiL"><article class="box hoverable" data-preview="previews/ViSiL.html"><h2 class="title mb-0">ViSiL<span style="float:right" class="tag is-light">⭐ 226 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/visil">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:kordogeo@fel.cvut.cz">🖂 kordogeo@fel.cvut.cz</a></span>
 </h2>
 <div><div></div>
@@ -486,7 +482,7 @@ International Journal of Artificial Inte...</div>
 </table>
 </div></article></div>
 
-<div class="cell p-1" id="fairbench"><article class="box hoverable" data-preview="previews/fairbench.html"><h2 class="title mb-0">fairbench<span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/FairBench">🏠 github</a></span>
+<div class="cell p-1" id="fairbench"><article class="box hoverable" data-preview="previews/fairbench.html"><h2 class="title mb-0">fairbench<span style="float:right" class="tag is-light">⭐ 23 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/mever-team/FairBench">🏠 github</a></span>
 <span style="float:right" class="tag is-link is-light"><a href="https://fairbench.readthedocs.io/">🏠 readthedocs</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
 </h2>
@@ -529,7 +525,7 @@ git clone https://github.com/BiodataAnalysisGroup/k-taxatree
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="lineagespot"><article class="box hoverable" data-preview="previews/lineagespot.html"><h2 class="title mb-0">lineagespot<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/lineagespot">🏠 github</a></span>
+<div class="cell p-1" id="lineagespot"><article class="box hoverable" data-preview="previews/lineagespot.html"><h2 class="title mb-0">lineagespot<span style="float:right" class="tag is-light">⭐ 2 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/lineagespot">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
 </h2>
 <div><div>Lineagespot is a framework written in R, and aims to identify SARS-CoV-2 related mutations based on a single (or a list) of variant(s) file(...</div>
@@ -557,7 +553,7 @@ It...</td></tr><tr><td><b>Installation</b>&nbsp;&nbsp;</td>
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="metaDIEA"><article class="box hoverable" data-preview="previews/metaDIEA.html"><h2 class="title mb-0">metaDIEA<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/metaDIEA">🏠 github</a></span>
+<div class="cell p-1" id="metaDIEA"><article class="box hoverable" data-preview="previews/metaDIEA.html"><h2 class="title mb-0">metaDIEA<span style="float:right" class="tag is-light">⭐ 1 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/metaDIEA">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:fpsom@certh.gr">🖂 fpsom@certh.gr</a></span>
 </h2>
 <div><div>RNA sequencing has become the standard technique for high resolution genome-wide monitoring of gene expression. As such, it often comprises...</div>
@@ -591,7 +587,7 @@ For extra details about the output please move to the output folder and checkout
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="pygrank"><article class="box hoverable" data-preview="previews/pygrank.html"><h2 class="title mb-0">pygrank<span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/pygrank">🏠 github</a></span>
+<div class="cell p-1" id="pygrank"><article class="box hoverable" data-preview="previews/pygrank.html"><h2 class="title mb-0">pygrank<span style="float:right" class="tag is-light">⭐ 28 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/MKLab-ITI/pygrank">🏠 github</a></span>
 <span style="float:right" class="tag is-link is-light"><a href="https://pygrank.readthedocs.io/en/latest/">🏠 readthedocs</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:maniospas@iti.gr">🖂 maniospas@iti.gr</a></span>
 </h2>
@@ -607,7 +603,7 @@ License: Apache 2.0
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="synth4bench"><article class="box hoverable" data-preview="previews/synth4bench.html"><h2 class="title mb-0">synth4bench<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/synth4bench">🏠 github</a></span>
+<div class="cell p-1" id="synth4bench"><article class="box hoverable" data-preview="previews/synth4bench.html"><h2 class="title mb-0">synth4bench<span style="float:right" class="tag is-light">⭐ 7 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/synth4bench">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:sfragkoul@certh.gr">🖂 sfragkoul@certh.gr</a></span>
 </h2>
 <div><div>
@@ -635,7 +631,7 @@ S.-C. Frag...</td></tr><tr><td><b>+ 5 more</b>&nbsp;&nbsp;</td>
 </tr></table>
 </div></article></div>
 
-<div class="cell p-1" id="tripr"><article class="box hoverable" data-preview="previews/tripr.html"><h2 class="title mb-0">tripr<span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/tripr">🏠 github</a></span>
+<div class="cell p-1" id="tripr"><article class="box hoverable" data-preview="previews/tripr.html"><h2 class="title mb-0">tripr<span style="float:right" class="tag is-light">⭐ 3 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/tripr">🏠 github</a></span>
 <span style="float:right" class="tag is-warning is-light"><a href="mailto:k.kardamiliotis@certh.gr">🖂 k.kardamiliotis@certh.gr</a></span>
 </h2>
 <div><div>
@@ -700,7 +696,7 @@ tripr: {"readme":1.03,"rmd":1.44,"edit":1.44,"todo":1.44,"badges":4.33,"start":1
 };</script>
     </div>
   </div>
-</section>
+
   <script>
     const entries = Array.from(document.querySelectorAll('#catalogue .cell'));
     const input = document.getElementById('search-input');
