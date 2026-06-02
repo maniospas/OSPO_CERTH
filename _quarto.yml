@@ -10,6 +10,8 @@ website:
         text: Home
       - href: docs/index.qmd
         text: Technical Documentation
+      - href: contact.qmd
+        text: Contact
 
     right:
       - text: "EN"
