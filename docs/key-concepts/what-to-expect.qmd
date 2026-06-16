@@ -3,7 +3,7 @@ title: "What to Expect"
 toc: true
 ---
 
-Open-sourcing software, hardware, and other research outputs comes with benefits and opportunities
+Open-sourcing software, and other research outputs comes with benefits and opportunities
 for contributions, but it also adds expectations from the community. This section gives an overview
 of common challenges and opportunities when open-sourcing a CERTH project.
 
@@ -24,7 +24,7 @@ contributor leaves CERTH. Content moderation of comments or code contributions m
 
 ## Use of Proprietary Tooling
 
-Some of the tools used for development, simulation, or hardware design may be proprietary or
+Some of the tools used for development or simulation may be proprietary or
 licence-restricted. People outside CERTH may not have access to these tools, and users may ask for
 changes in the tooling, libraries, or other components in order to reproduce your work and
 contribute to the project. It is good to keep these possibilities in mind when estimating the

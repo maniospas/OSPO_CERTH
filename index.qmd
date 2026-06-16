@@ -7,34 +7,34 @@ editor: visual
 ::: {.custom-hero .column-screen}
 :::
 
-# Open Source Program Office \| CERTH
+# Γραφείο Λογισμικού Ανοιχτού Κώδικα \| ΕΚΕΤΑ
 
-Open source is inextricably linked to the development of modern technologies and constitutes the foundation of the vast majority of codebases across all industrial sectors and technological domains, such as Artificial Intelligence (AI), Big Data Management, Cloud Computing, and Cybersecurity. Almost all organizations depend on technology created by the open-source community. Characteristically, the Linux operating system and its various distributions power all of the world's supercomputers (based on the top-500 list), while nearly all advancements in the field of Artificial Intelligence rely on popular open-source software platforms such as PyTorch, TensorFlow, and Jupyter. Concurrently, the increasing acquisition and technical support costs of commercial software solutions and services, combined with the criticality of digital sovereignty, render open-source technologies a fundamental component of independent research and development in the contemporary era.
+Ο ανοιχτός κώδικας είναι άρρηκτα συνδεδεμένος με την ανάπτυξη σύγχρονων τεχνολογιών και αποτελεί το θεμέλιο της συντριπτικής πλειοψηφίας των βάσεων κώδικα σε όλους τους βιομηχανικούς κλάδους και τους τεχνολογικούς τομείς, όπως η Τεχνητή Νοημοσύνη (AI), η Διαχείριση Μεγάλων Δεδομένων (Big Data), η Υπολογιστική Νέφους (Cloud Computing), και η Κυβερνοασφάλεια. Σχεδόν όλοι οι οργανισμοί εξαρτώνται από τεχνολογία που δημιουργείται από την κοινότητα ανοιχτού κώδικα. Χαρακτηριστικά, το λειτουργικό σύστημα Linux και οι διάφορες διανομές του βρίσκονται πίσω από το σύνολο των υπερυπολογιστών παγκοσμίως (με βάση τη λίστα top-500), ενώ το σύνολο σχεδόν των εξελίξεων στον τομέα της Τεχνητής Νοημοσύνης βασίζεται σε δημοφιλείς πλατφόρμες ανοιχτού λογισμικού όπως η PyTorch, TensorFlow και Jupyter. Παράλληλα, το αυξανόμενο κόστος κτήσης και τεχνικής υποστήριξης των εμπορικών λύσεων και υπηρεσιών λογισμικού σε συνδυασμό με την κρισιμότητα της ψηφιακής κυριαρχίας (digital sovereignty) καθιστούν τις τεχνολογίες ανοιχτού κώδικα ως ένα θεμελιώδες συστατικό της ανεξάρτητης έρευνας και ανάπτυξης στη σημερινή εποχή.
 
-# Role of an Open Source Programs Office (OSPO)
+# Ρόλος ενός Γραφείου Λογισμικού Ανοιχτού Κώδικα (OSPO)
 
-An OSPO operates as a central interface for open-source-related activities throughout an organization, consolidating the requisite expertise from diverse perspectives (including legal, financial, technical, and community standpoints). The OSPO is an established practice in numerous corporations (such as Microsoft and Google), public entities (such as the Government of France), and intergovernmental organizations (such as the WHO and CERN). It functions as the center of competency for an organization's open-source operations and structure, and it is responsible for defining and implementing the strategies and policies that guide these endeavors.
+Ένα OSPO λειτουργεί ως κεντρική διεπαφή για δραστηριότητες που σχετίζονται με τον ανοιχτό κώδικα σε όλο τον οργανισμό, συγκεντρώνοντας την απαιτούμενη τεχνογνωσία από διαφορετικές οπτικές γωνίες (όπως η νομική, η οικονομική, η τεχνική και η οπτική της κοινότητας). Το OSPO αποτελεί καθιερωμένη πρακτική σε πολλές εταιρείες (όπως η Microsoft και η Google), δημόσιους φορείς (όπως η κυβέρνηση της Γαλλίας) και διακυβερνητικούς οργανισμούς (όπως ο ΠΟΥ και το CERN ). Λειτουργεί ως το κέντρο εξειδίκευσης (center of competency) για τις λειτουργίες και τη δομή ανοιχτού κώδικα ενός οργανισμού και είναι υπεύθυνο για τον καθορισμό και την εφαρμογή στρατηγικών και πολιτικών που καθοδηγούν αυτές τις προσπάθειες.
 
-# Activities of the Open Source Software Office at CERTH
+# Δράσεις του Γραφείου Λογισμικού Ανοιχτού Κώδικα στο ΕΚΕΤΑ
 
-The Open Source Programs Office (OSPO) at CERTH serves as an entry point to CERTH's open-source expertise. The CERTH OSPO is an open and inclusive service, operating collaboratively with all Institutes, and serving externally as a visible interface for potential partners and the interested public. This encompasses events, communication, support, and training throughout the year.
+Το Γραφείο Προγραμμάτων Ανοιχτού Κώδικα (OSPO) στο ΕΚΕΤΑ αποτελεί σημείο εισόδου στην τεχνογνωσία του ΕΚΕΤΑ στον Ανοιχτό Κώδικα. Το OSPO CERTH είναι μια ανοιχτή και συμπεριληπτική υπηρεσία, που λειτουργεί συνεργατικά με όλα τα Ινστιτούτα, και εξωτερικά ως μια ορατή διεπαφή για πιθανούς εταίρους και το ενδιαφερόμενο κοινό. Αυτό περιλαμβάνει εκδηλώσεις, επικοινωνία, υποστήριξη και εκπαίδευση καθ' όλη τη διάρκεια του έτους.
 
-**Internally**, the CERTH OSPO has the following roles:
+**Εσωτερικά**, το OSPO CERTH έχει τους εξής ρόλους:
 
--   To advise, guide, and train CERTH staff regarding best practices, tools, licensing, developments, etc., for Open Source projects.
+-    Να συμβουλεύει, να καθοδηγεί και να εκπαιδεύει το προσωπικό του ΕΚΕΤΑ σχετικά με βέλτιστες πρακτικές, εργαλεία, άδειες χρήσης, εξελίξεις κ.λπ. για έργα Ανοιχτού Κώδικα.
 
--   To provide recommendations for the release of software and hardware developed at CERTH as open-source projects.
+-   Να παρέχει συστάσεις για τη διάθεση λογισμικού που αναπτύσσεται στο ΕΚΕΤΑ ως έργο ανοιχτού κώδικα.
 
--   To provide guidelines and best practices concerning the technical aspects of sharing code and designs (e.g., hosting locations, appropriate services to utilize, proper use of CERTH infrastructures, general Open Source tools such as license compliance checks, and testing configuration methodologies).
+-   Να παρέχει κατευθυντήριες γραμμές και βέλτιστες πρακτικές για τις τεχνικές πτυχές του διαμοιρασμού κώδικα και σχεδίων, π.χ. πού να φιλοξενούνται, ποιες υπηρεσίες να χρησιμοποιούνται, κατάλληλη χρήση των υποδομών του ΕΚΕΤΑ, γενικά εργαλεία για Ανοιχτό Κώδικα όπως έλεγχοι συμμόρφωσης αδειών και τρόπος ρύθμισης δοκιμών.
 
--   To facilitate and enhance the dissemination of Open Source.
+-   Να διευκολύνει και να ενισχύει τη διάδοση του Ανοιχτού Κώδικα.
 
--   To advise CERTH Management on Open Source matters that impact the organization.
+-   Να συμβουλεύει τη Διοίκηση του ΕΚΕΤΑ για θέματα Ανοιχτού Κώδικα με αντίκτυπο στον οργανισμό.
 
-**Externally**, the CERTH OSPO has the following roles:
+**Εξωτερικά**, το OSPO CERTH έχει τους εξής ρόλους:
 
--   To provide a public directory of CERTH's Open Source portfolio that is easily accessible via the CERTH OSPO website.
+-   Να παρέχει έναν δημόσιο κατάλογο του Ανοιχτού Κώδικα του ΕΚΕΤΑ που είναι εύκολα προσβάσιμος από τον ιστότοπο του OSPO CERTH.
 
--   To guide interested external parties toward opportunities, projects, and experts at CERTH through the public directory, events, external communications, the website, etc.
+-   Να καθοδηγεί τα ενδιαφερόμενα εξωτερικά μέρη σε ευκαιρίες, έργα και εμπειρογνώμονες στο EKETA μέσω του δημόσιου καταλόγου, εκδηλώσεων, εξωτερικής επικοινωνίας, ιστοτόπου, κ.λπ.
 
--   To support external inquiries directed to CERTH management that pertain to Open Source.
+-   Να υποστηρίζει εξωτερικά ερωτήματα προς τη διοίκηση του ΕΚΕΤΑ που σχετίζονται με τον Ανοιχτό Κώδικα.

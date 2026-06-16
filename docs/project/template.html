@@ -1,0 +1,101 @@
+<div id="preview-overlay">&nbsp;</div>
+<div id="preview-panel">
+  <div id="preview-content"></div>
+</div>
+<div class="content page-columns page-full">
+  <div id="search-bar-custom">
+    <div class="input-group input-group-lg">
+      <input class="form-control" type="text" id="search-input" placeholder="🔍 Search projects…">
+    </div>
+    <div class="form-text" id="search-hint"></div>
+  </div>
+
+  <div class="row row-cols-1 g-0" id="catalogue">
+    {{CONTENTS}}
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const entries = Array.from(document.querySelectorAll('#catalogue .col'));
+  const input = document.getElementById('search-input');
+  const hint = document.getElementById('search-hint');
+  let debounce;
+
+  /* ── Preview panel ── */
+  const overlay = document.getElementById('preview-overlay');
+  const panel   = document.getElementById('preview-panel');
+  const content = document.getElementById('preview-content');
+
+  const previewCache = {};
+  function openPreview(box) {
+    const path = box.dataset.preview;
+    const load = previewCache[path]
+      ? Promise.resolve(previewCache[path])
+      : fetch(path)
+          .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+          .then(html => { previewCache[path] = html; return html; });
+    load
+      .then(html => {
+        content.innerHTML = html;
+        overlay.classList.add('is-active');
+        panel.classList.add('is-active');
+      })
+      .catch(() => {
+        content.innerHTML = box.innerHTML;
+        overlay.classList.add('is-active');
+        panel.classList.add('is-active');
+      });
+  }
+
+  function closePreview() {
+    overlay.classList.remove('is-active');
+    panel.classList.remove('is-active');
+  }
+
+  document.querySelectorAll('.box.hoverable').forEach(box => {
+    box.addEventListener('click', () => openPreview(box));
+  });
+
+  overlay.addEventListener('click', closePreview);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
+
+  /* ── Search ── */
+  function search(raw) {
+    const terms = raw.trim().toLowerCase().split(/\s+/).filter(t => t.length >= 2);
+    if (!terms.length) {
+      entries.forEach(e => { e.style.display = ''; e.style.order = ''; });
+      hint.textContent = '';
+      return;
+    }
+    const scored = entries.map(entry => {
+      const id = entry.id;
+      const kws = kwdata[id] ?? {};
+      let score = 0;
+      for (const term of terms) {
+        let included = false;
+        for (const [kw, weight] of Object.entries(kws)) {
+          if (kw.startsWith(term)) { score += weight; included = true; }
+        }
+        if (!included) return { entry, score: 0 };
+      }
+      return { entry, score };
+    });
+    scored.forEach(s => s.entry.style.display = s.score > 0 ? '' : 'none');
+    const visible = scored.filter(s => s.score > 0).sort((a, b) => b.score - a.score);
+    visible.forEach(({ entry }, i) => entry.style.order = i);
+    const catalogue = document.getElementById('catalogue');
+    catalogue.style.display = 'flex';
+    catalogue.style.flexDirection = 'column';
+    hint.textContent = visible.length
+      ? `Showing ${visible.length} result${visible.length > 1 ? 's' : ''}`
+      : 'No results found';
+  }
+
+  input.addEventListener('input', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => search(input.value), 100);
+  });
+});
+</script>

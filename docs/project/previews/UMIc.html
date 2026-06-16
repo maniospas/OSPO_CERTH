@@ -1,16 +1,16 @@
-<h2 class="title mb-0">UMIc<span style="float:right" class="tag is-light">⭐ 9 stars</span><span style="float:right" class="tag is-link is-light"><a href="https://github.com/BiodataAnalysisGroup/UMIc">🏠 github</a></span>
-<span style="float:right" class="tag is-warning is-light"><a href="mailto:nanastasiadou@certh.gr">🖂 nanastasiadou@certh.gr</a></span>
-</h2>
-<span class="tag is-primary is-light">umi</span>
-<span class="tag is-primary is-light">umic</span>
-<span class="tag is-primary is-light">umisproject</span>
-<span class="tag is-primary is-light">quot</span>
-<span class="tag is-primary is-light">input</span>
-<span class="tag is-primary is-light">fastq</span>
-<span class="tag is-primary is-light">variable</span>
-<span class="tag is-primary is-light">read</span>
+<div class="d-flex flex-wrap align-items-center gap-2 mb-1"><span class="h3 me-auto fw-semibold">UMIc</span><a href="https://github.com/BiodataAnalysisGroup/UMIc" class="border rounded px-2 py-0 small text-primary text-decoration-none">🏠 github</a>
+<a href="mailto:nanastasiadou@certh.gr" class="border rounded px-2 py-0 small text-warning-emphasis text-decoration-none">🖂 nanastasiadou@certh.gr</a>
+</div>
+<span class="badge text-bg-info fw-normal">umi</span>
+<span class="badge text-bg-info fw-normal">umic</span>
+<span class="badge text-bg-info fw-normal">umisproject</span>
+<span class="badge text-bg-info fw-normal">quot</span>
+<span class="badge text-bg-info fw-normal">input</span>
+<span class="badge text-bg-info fw-normal">fastq</span>
+<span class="badge text-bg-info fw-normal">variable</span>
+<span class="badge text-bg-info fw-normal">read</span>
 <div><div><p>UMIc is a framework, written in <a href="https://www.r-project.org/">R</a>, implementing a new proposed method for UMI deduplication and reads correction. The method works at nucleotide level, taking into account the frequency and the mean quality of each base.</p></div>
-<h5 class="subtitle is-4 mt-5"><p>Prerequisites</p></h5>
+<h5 class="h5 mt-4"><p>Prerequisites</p></h5>
 <div><p>The packages needed to be installed, in order to run the project are:
 - from CRAN</p>
 <pre class="codehilite"><code>install.packages(c(&quot;tidyverse&quot;, &quot;data.table&quot;, &quot;stringdist&quot;, &quot;pryr&quot;))
@@ -21,11 +21,11 @@
 </ul>
 <pre class="codehilite"><code>BiocManager::install(c(&quot;Biostrings&quot;, &quot;ShortRead&quot;))
 </code></pre></div>
-<h5 class="subtitle is-4 mt-5"><p>Installing</p></h5>
+<h5 class="h5 mt-4"><p>Installing</p></h5>
 <div><p>The project can be downloaded using git:</p>
 <pre class="codehilite"><code>git clone https://github.com/BiodataAnalysisGroup/UMIc
 </code></pre></div>
-<h5 class="subtitle is-4 mt-5"><p>Running the project</p></h5>
+<h5 class="h5 mt-4"><p>Running the project</p></h5>
 <div><p>The framework consists of three scripts:
 - <code>UMIsProject.R</code> 
 - <code>casesWorkflows.R</code>
@@ -35,7 +35,7 @@
 </code></pre>
 
 <p>The project provides example input datasets and their outputs, for testing purposes. The folder <a href="https://github.com/BiodataAnalysisGroup/UMIc/tree/master/data">data</a> includes example datasets for all three scenarios in their corresponding subfolders. Each subfolder icludes the fastq files and a Readme.md file with the parameter values, used to generate the files in folder <a href="https://github.com/BiodataAnalysisGroup/UMIc/tree/master/outputs">outputs</a>. The user must provide the input and output folders' filepaths.</p></div>
-<h5 class="subtitle is-4 mt-5"><p>Inputs</p></h5>
+<h5 class="h5 mt-4"><p>Inputs</p></h5>
 <div><p>Before running the project, the user must set the appropriate input parameters in the main script <code>UMIsProject.R</code>.</p>
 <p>The later has the following inputs:
 - <code>pairedData</code>: boolean variable that indicates, whether data are paired <code>T</code> or single <code>F</code>. 
@@ -48,10 +48,10 @@
 - <code>inputsFolder</code>: name or filepath of the inputs folder.
 - <code>outputsFolder</code>: name or filepath of the outputs folder, default value is <code>UMIc_output</code>.</p>
 <p>The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence. The library preparation step of the input files must be genarated using the same protocol and fulfil the same input parameters described above.</p></div>
-<h5 class="subtitle is-4 mt-5"><p>Outputs</p></h5>
+<h5 class="h5 mt-4"><p>Outputs</p></h5>
 <div><p>The output data are stored also in fastq files, named the same as the input files with an added <code>_corrected</code> suffix and the name of the folder can be provided by the user. The files contain the corrected sequences (without the UMI) and their quality. It is worth mentioning that the new sequence ID is constructed by combining the ID of one of the input sequences, that has that same UMI, and the UMI itself.</p>
 <p>The framework also produces a csv file with all the information of the output fastq files and extra information, that can help return from the output sequences to their corresponding input sequences. The file is named the same as the Read1 fastq file with an added <code>_summary_table</code> suffix.</p>
 <p>For more details, please refer to the <a href="https://github.com/BiodataAnalysisGroup/UMIc/wiki">wiki</a>.</p></div>
-<h5 class="subtitle is-4 mt-5"><p>License</p></h5>
+<h5 class="h5 mt-4"><p>License</p></h5>
 <div><p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p></div>
 </div>

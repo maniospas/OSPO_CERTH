@@ -2,6 +2,9 @@ project:
   type: website
   resources:
     - "*.html"
+    - "*.css"
+  post-render:
+    - docs/project/add_catalogue_to_software.py
 
 website:
   title: "Open Source Program Office | CERTH"
@@ -12,8 +15,12 @@ website:
         text: Home
       - href: docs/index.qmd
         text: Technical Documentation
-      - href: docs/project/all.html
+      # - href: docs/project/all.html
+      #   text: Software
+      - href: docs/project/software.qmd
         text: Software
+      - href: contact.qmd
+        text: Contact
 
     right:
       - text: "EN"

@@ -1,5 +1,4 @@
 import os
-
 from builder.core import Entry, tool
 from urllib.parse import urlsplit
 import re
@@ -7,27 +6,28 @@ import re
 @tool
 def banner(entry: Entry):
     """constructs a banner using the entry's name and the urls as tags"""
-    entry.contents += f'<h2 class="title mb-0">{entry.name}'
+    entry.contents += f'<div class="d-flex flex-wrap align-items-center gap-2 mb-1">'
+    entry.contents += f'<span class="h3 me-auto fw-semibold">{entry.name}</span>'
     if "stars" in entry.metadata:
-        entry.contents += f'<span style="float:right" class="tag is-light fs-6">⭐ {entry.metadata.get("stars")} stars</span>'
+        entry.contents += f'<span class="border rounded px-2 py-0 small text-secondary">⭐ {entry.metadata.get("stars")} stars</span>'
     found_tags = set()
     for url in entry.urls:
         try:
             name = urlsplit(url).netloc.split('.')[-2]
             if name in found_tags: continue
             found_tags.add(name)
-            entry.contents += f'<span style="float:right" class="tag is-link is-light fs-6"><a href="{url}">🏠 {name}</a></span>\n'
+            entry.contents += f'<a href="{url}" class="border rounded px-2 py-0 small text-primary text-decoration-none">🏠 {name}</a>\n'
         except Exception: pass
     if entry.owners:
-        entry.contents += f'<span style="float:right" class="tag is-warning is-light fs-6"><a href="mailto:{entry.owners[0]}">🖂 {entry.owners[0]}</a></span>\n'
-    entry.contents += "</h2>\n"
+        entry.contents += f'<a href="mailto:{entry.owners[0]}" class="border rounded px-2 py-0 small text-warning-emphasis text-decoration-none">🖂 {entry.owners[0]}</a>\n'
+    entry.contents += "</div>\n"
 
 @tool
-def keywords(entry: Entry, top_keywords:int=8):
+def keywords(entry: Entry, top_keywords: int = 8):
     """adds the top keywords as tags"""
     if not entry.tags: return
     for k, v in sorted(entry.tags.items(), key=lambda x: x[1], reverse=True)[:min(top_keywords, len(entry.tags))]:
-        entry.contents += f'<span class="tag is-primary is-light">{k}</span>\n'
+        entry.contents += f'<span class="badge badge-info">{k}</span>\n'
 
 def shorter(item: str):
     clean = re.sub(r'<[^>]+>', '', item)
@@ -37,12 +37,12 @@ def shorter(item: str):
     return clean[:first_pos].strip() + '...'
 
 def section_contents(unparsed_sections: dict[str, list[str]]):
-    contents = '<div>' + "\n".join((desc) for desc in unparsed_sections.get('#Description', "")) + '</div>\n'
+    contents = '<div>' + "\n".join(desc for desc in unparsed_sections.get('#Description', "")) + '</div>\n'
     for k, v in unparsed_sections.items():
         if k.startswith('#'): continue
-        contents += f'<h5 class="subtitle is-4 mt-5">{k}</h5>\n'
+        contents += f'<h5 class="h5 mt-4">{k}</h5>\n'
         for item in v:
-            contents += f'<div>{(item)}</div>\n'
+            contents += f'<div>{item}</div>\n'
     contents = '<div>' + contents + '</div>'
     return contents
 
@@ -53,29 +53,29 @@ def sections(entry: Entry):
     entry.unparsed_sections = dict()
 
 @tool
-def create_previews(entry: Entry, top_keywords:int=8):
+def create_previews(entry: Entry, top_keywords: int = 8):
     """creates a preview section"""
     os.makedirs("./previews", exist_ok=True)
     path = f"previews/{entry.normal_name()}.html"
     with open(path, 'w') as file:
         contents = entry.contents
         for k, v in sorted(entry.tags.items(), key=lambda x: x[1], reverse=True)[:min(top_keywords, len(entry.tags))]:
-            contents += f'<span class="tag is-primary is-light">{k}</span>\n'
-        file.write(contents+section_contents(entry.unparsed_sections))
+            contents += f'<span class="badge text-bg-info fw-normal">{k}</span>\n'
+        file.write(contents + section_contents(entry.unparsed_sections))
     entry.metadata["preview"] = path
 
 @tool
 def short_sections(entry: Entry):
     """moves a preview of all current sections to html contents while generating a corresponding html"""
-    contents = '<div>'+"\n".join(shorter(desc) for desc in entry.unparsed_sections.get('#Description', ""))+'</div>\n'
-    contents += "<table>\n"
-    for k ,v in entry.unparsed_sections.items():
+    contents = '<div>' + "\n".join(shorter(desc) for desc in entry.unparsed_sections.get('#Description', "")) + '</div>\n'
+    contents += '<table class="table table-sm table-borderless mb-0">\n'
+    for k, v in entry.unparsed_sections.items():
         if not k or k.startswith('#'): continue
-        contents += f'<tr><td><b>{shorter(k).strip("# ")}</b>&nbsp;&nbsp;</td>\n'
-        if v: contents += "<td>"+shorter(v[0])+"</td>"
-        contents += "</tr>"
-    contents += "</table>\n"
-    contents = '<div>'+contents+'</div>'
+        contents += f'<tr><td class="pe-3 text-nowrap align-top">{shorter(k).strip("# ")}</td>\n'
+        if v: contents += f'<td class="align-top">{shorter(v[0])}</td>'
+        contents += '</tr>'
+    contents += '</table>\n'
+    contents = '<div>' + contents + '</div>'
     entry.contents += contents
     entry.unparsed_sections = dict()
 
@@ -84,6 +84,6 @@ def container(entry: Entry):
     """adds all generated content in the form of a boxed entry with appropriate id - should be the last step"""
     preview = entry.metadata.get('preview', '')
     if preview:
-        entry.contents = f'<div class="cell p-1" id="{entry.normal_name()}"><article class="box hoverable" data-preview="{preview}">{entry.contents}</article></div>\n'
+        entry.contents = f'<div class="col p-1" id="{entry.normal_name()}"><div class="card h-100 box hoverable" data-preview="{preview}"><div class="card-body">{entry.contents}</div></div></div>\n'
     else:
-        entry.contents = f'<div class="cell p-1" id="{entry.normal_name()}"><article class="box">{entry.contents}</article></div>\n'
+        entry.contents = f'<div class="col p-1" id="{entry.normal_name()}"><div class="card h-100"><div class="card-body">{entry.contents}</div></div></div>\n'

@@ -4,7 +4,7 @@ toc: false
 ---
 
 Are you a researcher or developer at CERTH thinking of diving into the open-source world, or do you have
-inquiries regarding your open-source software or hardware designs?
+inquiries regarding your open-source software?
 
 This documentation covers the essential topics you need to know for developing an open-source project
 at CERTH: copyright, licensing, due diligence, and best practices.
