@@ -9,32 +9,49 @@ editor: visual
 
 # Open Source Program Office \| CERTH
 
-Open source is inextricably linked to the development of modern technologies and constitutes the foundation of the vast majority of codebases across all industrial sectors and technological domains, such as Artificial Intelligence (AI), Big Data Management, Cloud Computing, and Cybersecurity. Almost all organizations depend on technology created by the open-source community. Characteristically, the Linux operating system and its various distributions power all of the world's supercomputers (based on the top-500 list), while nearly all advancements in the field of Artificial Intelligence rely on popular open-source software platforms such as PyTorch, TensorFlow, and Jupyter. Concurrently, the increasing acquisition and technical support costs of commercial software solutions and services, combined with the criticality of digital sovereignty, render open-source technologies a fundamental component of independent research and development in the contemporary era.
+**Open source** refers to software whose source code is made publicly available, promoting contribution
+and reuse by others. The practice is inextricably linked to the development of modern technologies 
+and almost all organizations depend on technologies created by the open-source community. 
+In addition to the reliability obtained by public auditing, the move towards open source software is
+encouraged by the increasing acquisition and technical support costs of commercial software
+and services, combined with concerns over digital sovereignty.
 
-# Role of an Open Source Programs Office (OSPO)
+Characteristically, the Linux operating system, whose distributions power the world's 
+top-500 supercomputers, is open source. The same holds true for nearly 
+all advancements in the field of Artificial Intelligence (AI), which also rely on popular open-source 
+platforms like PyTorch, TensorFlow, and Jupyter. Open source software is equally pivotal for sectors 
+like Big Data Management, Cloud Computing, and Cybersecurity.
 
-An OSPO operates as a central interface for open-source-related activities throughout an organization, consolidating the requisite expertise from diverse perspectives (including legal, financial, technical, and community standpoints). The OSPO is an established practice in numerous corporations (such as Microsoft and Google), public entities (such as the Government of France), and intergovernmental organizations (such as the WHO and CERN). It functions as the center of competency for an organization's open-source operations and structure, and it is responsible for defining and implementing the strategies and policies that guide these endeavors.
+**So what is an Open Source Program Office (OSPO)?** It operates as a central interface for open-source-related 
+activities throughout an organization, consolidating the requisite expertise from diverse perspectives,
+including legal, financial, technical, and community standpoints. Such an office is an established practice 
+in numerous corporations (such as Microsoft and Google), public entities (such as the Government of France), 
+and intergovernmental organizations (such as the WHO and CERN). It functions as the center of competency 
+for an organization's open-source operations and structure, and it is responsible for defining and 
+implementing the strategies and policies that guide these endeavors.
 
-# Activities of the Open Source Software Office at CERTH
+## Our activities
 
-The Open Source Programs Office (OSPO) at CERTH serves as an entry point to CERTH's open-source expertise. The CERTH OSPO is an open and inclusive service, operating collaboratively with all Institutes, and serving externally as a visible interface for potential partners and the interested public. This encompasses events, communication, support, and training throughout the year.
+The CERTH OSPO serves as an entry point to CERTH's open-source expertise by forming an open and inclusive service, 
+operating collaboratively with all Institutes, and serving externally as a visible interface for potential partners 
+and the interested public. Our activities encompass events, communication, support, and training throughout the year.
+Externally, we assume the following roles:
 
-**Internally**, the CERTH OSPO has the following roles:
+- Maintain a **public directory** of CERTH's open source portfolio that is easily accessible via this website.
 
--   To advise, guide, and train CERTH staff regarding best practices, tools, licensing, developments, etc., for Open Source projects.
+- Support **inquiries** directed to CERTH management that pertain to open source.
 
--   To provide recommendations for the release of software developed at CERTH as open-source projects.
+- Guide interested parties **toward opportunities, projects, and experts** at CERTH. This is achieved through the public directory, events, external communications, the website, etc.
 
--   To provide guidelines and best practices concerning the technical aspects of sharing code and designs (e.g., hosting locations, appropriate services to utilize, proper use of CERTH infrastructures, general Open Source tools such as license compliance checks, and testing configuration methodologies).
 
--   To facilitate and enhance the dissemination of Open Source.
+## Support
 
--   To advise CERTH Management on Open Source matters that impact the organization.
+Internally, we aim to guide and train CERTH staff regarding best practices, tools, licensing, developments, etc., 
+for open source projects. In particular, we:
 
-**Externally**, the CERTH OSPO has the following roles:
+- Provide **recommendations** for the release of software developed at CERTH as open-source projects. This includes guidelines and best practices concerning the technical aspects of designing and sharing code (e.g., hosting locations, appropriate services to utilize, proper use of CERTH infrastructures, general open source tools such as license compliance checks, and testing configuration methodologies).
 
--   To provide a public directory of CERTH's Open Source portfolio that is easily accessible via the CERTH OSPO website.
+- Facilitate and enhance the **dissemination** of open source.
 
--   To guide interested external parties toward opportunities, projects, and experts at CERTH through the public directory, events, external communications, the website, etc.
+- **Advise** CERTH management on open source matters that impact the organization.
 
--   To support external inquiries directed to CERTH management that pertain to Open Source.
