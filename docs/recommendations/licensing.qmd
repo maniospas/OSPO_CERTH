@@ -8,20 +8,18 @@ toc: true
 CERTH's Open Science commitments, aligned with the
 [European Open Science Cloud (EOSC)](https://eosc.eu/) and Horizon Europe requirements, encourage
 making software developed in the course of publicly funded research available as open source wherever
-possible.
+possible. Licence selection should involve a consultation with the CERTH OSPO and consider:
 
-Licence selection should involve a consultation with the CERTH OSPO. When selecting a licence,
-consider:
-
-- **Community norms** within your ecosystem
+- **Dependent software** which you have used in your project.
+- **Community norms** within your ecosystem.
 - **Which sharing regime** (permissive, weakly-reciprocal, or strongly-reciprocal) aligns with your
-  project's objectives (see [Key concepts: Licensing](../key-concepts/licensing.qmd))
-- **Obligations imposed by your funding body** or consortium agreement
+  project's objectives (see [Key concepts: Licensing](../key-concepts/licensing.qmd)).
+- **Obligations imposed by your funding body** or consortium agreement.
 
-## Licensing Software
+## Licence compatibility
 
 Use a licence approved by the [Open Source Initiative (OSI)](https://opensource.org/licenses) for
-CERTH-copyrighted software. Common choices:
+CERTH-copyrighted software. Common choices are overviewed here. 
 
 | Licence | Type | Typical use case |
 |---|---|---|
@@ -30,12 +28,11 @@ CERTH-copyrighted software. Common choices:
 | GPL-3.0 | Strongly reciprocal | Tools where all derivatives must remain open source |
 | LGPL-3.0 | Weakly reciprocal | Libraries intended to be linked from proprietary software |
 
-## Licence Compatibility
-
-When combining components under different licences, compatibility must be verified before release.
+When combining components, for example by reusing/forking and modifying the code of others
+license compatibility must be verified before releasing the result.
 This is part of your due diligence (see [Key concepts: Due diligence](../key-concepts/due-diligence.qmd)).
-
-A common compatibility matrix:
+A common compatibility matrix is shown below, where do note that reused code **must** maintain the original 
+license, for example while accompanied by the exact original license file.
 
 | You want to use... | Under Apache-2.0 | Under MIT | Under GPL-3.0 |
 |---|---|---|---|
@@ -43,3 +40,121 @@ A common compatibility matrix:
 | MIT code | ✓ | ✓ | ✓ |
 | GPL-3.0 code | Only if your project is also GPL-3.0 | Only if your project is also GPL-3.0 | ✓ |
 | LGPL-3.0 library | ✓ (dynamic linking) | ✓ (dynamic linking) | ✓ |
+
+::: {.callout-warning}
+**It does not suffice to only mention the desired license in a README file. You need to actually
+include the license text.**
+:::
+
+## Option 1: Add license in code comments
+
+The two most recognized ways of applying licenses are either as code comments or by including 
+license files in the source code directory and appropriately marking your files.
+The legal text that should go into those files or comments is different by license but typically
+requires manually filling out the copyright holder, which is CERTH, and year, which is 
+the year of the code's first public release. 
+
+Comment-based licensing requires less book-keeping for small projects. It can thus serve as 
+starting point until the project grows in size, in which case you can move to the option of adding 
+license files, as described next. A Python file licensed under Apache-2.0 may look
+like this:
+
+
+```python
+# Copyright 2026 Centre for Research and Technology Hellas (CERTH)
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name = "the CERTH OSPO"
+print(f"Hello from {name}!")
+```
+
+## Option 2: Add license files
+
+In larger projects (e.g., with >30 files), you may want to concentrate your licensing information
+in one place. Historically, an ad-hoc description would have been provided to describe which
+licenses apply to which files or code segments. However, we recommend the 
+[REUSE specification](https://reuse.software/) as a recommended standard that is also endorsed by
+the Free Software Foundation Europe (FSFE) and broadly adopted in European open-source projects
+like the [Linux kernel](https://github.com/torvalds/linux).
+
+This specification requires first gathering all applicable licenses under a `LICENSES/` directory
+in the repository root. Licenses should contain the **full licence text** for each
+licence used (e.g., `LICENSES/Apache-2.0.txt`).
+Then, in each source code file, a copyright notice briefly establishes the ownership
+and creation timeframe. Like above, the notice identifies the copyright holder and the year 
+the specific file was created.
+Again, only the initial year of creation needs to be included. Successive years or ranges are unnecessary
+unless the file has been substantially revised by a different contributor, in which case additional
+lines can be added:
+
+**Format:**
+
+```text
+SPDX-FileCopyrightText: <year> <copyright holder>
+```
+
+**Example:**
+
+```text
+SPDX-FileCopyrightText: 2024 Centre for Research and Technology Hellas (CERTH)
+SPDX-FileCopyrightText: 2025 Contributor Name, Affiliation
+```
+
+The notice by itself does not yet link to a license. This is done by also including
+the license notice using an appropriate [SPDX identifier](https://spdx.org/licenses/). Do note
+that the license notice is also not sufficient for meeting all legal licensing requirements;
+you should also add the used license in the `LICENSE/` directory.
+
+**Format:**
+
+```text
+SPDX-License-Identifier: <SPDX-identifier>
+```
+
+**Complete example for an Apache-2.0-licensed Python source file:**
+
+```python
+# SPDX-FileCopyrightText: 2026 Centre for Research and Technology Hellas (CERTH)
+# SPDX-License-Identifier: Apache-2.0
+
+name = "the CERTH OSPO"
+print(f"Hello from {name}!")
+```
+
+This machine-readable format enables automated licence compliance verification by tools such as
+`reuse lint` and third-party scanners used by downstream integrators. For example, check that 
+all your files have been properly annotated with copyright and license by installing the `reuse`
+package in your Python virtual environment. The CERTH OSPO can assist with initial setup and 
+interpreting results.
+
+```bash
+pip install reuse
+reuse lint
+```
+
+## Placement in source files
+
+Place SPDX tags or license comments in a comment block at the very top of each source file, 
+before any other content like imports or package declarations. For file formats that do not support 
+inline comments (e.g., images, binary assets, or certain data formats shipped with the software), 
+use a companion `.license` sidecar file with the same base name:
+
+```text
+my-asset.svg          ← the asset
+my-asset.svg.license  ← contains the SPDX tags
+```
+
+If you have such files that cannot carry inline notices and are using the REUSE specification, 
+you need to state which they are with a `REUSE.toml` file (or legacy `.reuse/dep5`). This is
+placed at the root of your project and maps file globs to their copyright and licence information.
