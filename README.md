@@ -1,0 +1,23 @@
+# OSPO CERTH Website
+
+Source for the [CERTH Open Source Program Office](https://ospo-certh.github.io/OSPO_CERTH/) website,
+built with [Quarto](https://quarto.org/).
+
+## Setup
+
+Install [conda](https://docs.conda.io/en/latest/miniconda.html) or
+[mamba](https://mamba.readthedocs.io/en/latest/installation.html), then:
+
+```bash
+conda env create -f environment.yml
+conda activate ospo-certh
+```
+
+## Usage
+
+| Command | Description |
+|---|---|
+| `quarto preview` | Start a live-reloading local server at `http://localhost:4848` |
+| `quarto render` | Build the static site into `_site/` |
+
+*There will be a small delay in preview mode while the catalogue is being rebuilt between refreshes. While testing, and to avoid github rate limits, commne out the line `"builder.tools.github.get_stars",` in `docs/project/add_catalogue_to_software.py`.*

@@ -31,6 +31,7 @@ for list_path in list_paths:
 text = process(entries, pipeline)
 template = Path("template.html").read_text()
 output_dir = Path(os.environ.get("QUARTO_PROJECT_OUTPUT_DIR", "_site"))
+
 out_file = Path(output_dir/"docs/project/software.html")
 catalogue = template.replace("{{CONTENTS}}", text)
 html = out_file.read_text(encoding="utf-8")
