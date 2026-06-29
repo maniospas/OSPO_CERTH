@@ -1,0 +1,9 @@
+---
+title: ""
+toc: false
+sidebar: false
+search: false
+format:
+  html:
+    css: template.css
+---

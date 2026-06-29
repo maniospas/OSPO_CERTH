@@ -4,12 +4,16 @@
   let path = window.location.pathname;
 
   // Convention: no suffix = GR (default), -en suffix = EN, /docs/ = EN, /docs-gr/ = GR
-  let isEN = path.indexOf('/docs/') !== -1 || path.indexOf('index-en') !== -1 || path.indexOf('contact-en') !== -1;
+  let isEN = (path.indexOf('/docs/') !== -1 && path.indexOf('software-gr') === -1) || path.indexOf('index-en') !== -1 || path.indexOf('contact-en') !== -1 || path.indexOf('software-en') !== -1;
   let isGR = !isEN;
 
   // ── Equivalent page in the other language ─────────────────────────────────
   let otherHref;
-  if (path.indexOf('/docs-gr/') !== -1) {
+  if (path.indexOf('software-en.html') !== -1) {
+    otherHref = path.replace('software-en.html', 'software-gr.html');
+  } else if (path.indexOf('software-gr.html') !== -1) {
+    otherHref = path.replace('software-gr.html', 'software-en.html');
+  } else if (path.indexOf('/docs-gr/') !== -1) {
     otherHref = path.replace('/docs-gr/', '/docs/');
   } else if (path.indexOf('/docs/') !== -1) {
     otherHref = path.replace('/docs/', '/docs-gr/');
@@ -32,7 +36,7 @@
     home:    { gr: base + 'index.html',      en: base + 'index-en.html' },
     docs:    { gr: base + 'docs-gr/index.html', en: base + 'docs/index.html' },
     contact: { gr: base + 'contact.html',    en: base + 'contact-en.html' },
-    software:{ gr: base + 'docs-gr/project/software.html', en: base + 'docs/project/software.html' }
+    software:{ gr: base + 'docs/project/software-gr.html', en: base + 'docs/project/software-en.html' }
   };
 
   // ── Rewrite brand/title link (always hardcoded to EN by Quarto) ──────────

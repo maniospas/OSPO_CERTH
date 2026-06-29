@@ -15,7 +15,7 @@ website:
         text: Home
       - href: docs/index.qmd
         text: Technical Documentation
-      - href: docs/project/software.qmd
+      - href: docs/project/software-en.qmd
         text: Software
       - href: contact.qmd
         text: Contact
