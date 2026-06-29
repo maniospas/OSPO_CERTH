@@ -31,7 +31,8 @@
   let targets = {
     home:    { gr: base + 'index.html',      en: base + 'index-en.html' },
     docs:    { gr: base + 'docs-gr/index.html', en: base + 'docs/index.html' },
-    contact: { gr: base + 'contact.html',    en: base + 'contact-en.html' }
+    contact: { gr: base + 'contact.html',    en: base + 'contact-en.html' },
+    software:{ gr: base + 'docs-gr/project/software.html', en: base + 'docs/project/software.html' }
   };
 
   // ── Rewrite brand/title link (always hardcoded to EN by Quarto) ──────────
@@ -74,6 +75,7 @@
       span.textContent = isGR ? 'Τεχνική Τεκμηρίωση' : 'Technical Documentation';
       docsLink = a;
     } else if (text === 'Software' || text === 'Λογισμικό') {
+      a.href = isGR ? targets.software.gr : targets.software.en;
       span.textContent = isGR ? 'Λογισμικό' : 'Software';
       softwareLink = a;
     } else if (text === 'Contact' || text === 'Επικοινωνία') {

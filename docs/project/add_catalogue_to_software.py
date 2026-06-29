@@ -9,7 +9,7 @@ os.chdir(Path(__file__).parent)
 #shared_config["retry_cache"] = True
 list_paths = ["lists/biodata_group.txt", "lists/mever_group.txt"]
 pipeline = [
-    "builder.tools.github.get_stars", # COMMENT THIS LINE FOR TESTING BECAUSE IT DOES NOT CACHE
+    #"builder.tools.github.get_stars", # COMMENT THIS LINE FOR TESTING BECAUSE IT DOES NOT CACHE
     "builder.tools.format.bootstrap.banner",
     "builder.tools.generic.sort",
     "builder.tools.github.add_readme",
