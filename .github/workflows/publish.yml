@@ -27,7 +27,7 @@ jobs:
       - name: Render
         shell: bash -l {0}
         run: |
-          conda activate myenv
+          conda activate ospo-certh
           quarto render
 
       - name: Publish to GitHub Pages
