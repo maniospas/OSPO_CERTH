@@ -6,4 +6,4 @@ editor: visual
 
 Have a question about open source at CERTH, licensing, or how the OSPO can help your work? We would be happy to hear from you.
 
-Send us an email at [ospo\@tbd.gr](mailto:ospo@certh.gr).
+Send us an email at [ospo\@certh.gr](mailto:ospo@certh.gr).

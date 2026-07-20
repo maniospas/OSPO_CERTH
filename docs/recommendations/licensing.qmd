@@ -31,8 +31,8 @@ CERTH-copyrighted software. Common choices are overviewed here.
 When combining components, for example by reusing/forking and modifying the code of others
 license compatibility must be verified before releasing the result.
 This is part of your due diligence (see [Key concepts: Due diligence](../key-concepts/due-diligence.qmd)).
-A common compatibility matrix is shown below, where do note that reused code **must** maintain the original 
-license, for example while accompanied by the exact original license file.
+A common compatibility matrix is shown below. Note that reused code **must** maintain the original 
+license, for example by being accompanied by the exact original license file.
 
 | You want to use... | Under Apache-2.0 | Under MIT | Under GPL-3.0 |
 |---|---|---|---|
@@ -55,7 +55,7 @@ requires manually filling out the copyright holder, which is CERTH, and year, wh
 the year of the code's first public release. 
 
 Comment-based licensing requires less book-keeping for small projects. It can thus serve as 
-starting point until the project grows in size, in which case you can move to the option of adding 
+a starting point until the project grows in size, in which case you can move to the option of adding 
 license files, as described next. A Python file licensed under Apache-2.0 may look
 like this:
 
@@ -114,7 +114,7 @@ SPDX-FileCopyrightText: 2025 Contributor Name, Affiliation
 The notice by itself does not yet link to a license. This is done by also including
 the license notice using an appropriate [SPDX identifier](https://spdx.org/licenses/). Do note
 that the license notice is also not sufficient for meeting all legal licensing requirements;
-you should also add the used license in the `LICENSE/` directory.
+you should also add the used license in the `LICENSES/` directory.
 
 **Format:**
 
