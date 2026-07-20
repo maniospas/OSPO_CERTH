@@ -14,8 +14,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Set up conda environment
+        run: |
+          conda env create -f environment.yml
+          conda activate ospo-certh
+          echo "CONDA_DEFAULT_ENV=ospo-certh" >> "$GITHUB_ENV"
+          echo "CONDA_PREFIX=$CONDA/envs/ospo-certh" >> "$GITHUB_ENV"
+          echo "$CONDA/envs/ospo-certh/bin" >> "$GITHUB_PATH"
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
