@@ -39,7 +39,7 @@ Externally, we assume the following roles:
 
 - Maintain a **public directory** of CERTH's open source portfolio that is easily accessible via this website.
 
-- Support **inquiries** directed to CERTH management that pertain to open source.
+- Answer **inquiries** directed to CERTH management that pertain to open source.
 
 - Guide interested parties **toward opportunities, projects, and experts** at CERTH. This is achieved through the public directory, events, external communications, the website, etc.
 

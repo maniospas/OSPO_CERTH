@@ -46,9 +46,7 @@ website:
               href: docs/key-concepts/what-to-expect.qmd
         - section: "Recommendations"
           contents:
-            - text: "Copyright"
-              href: docs/recommendations/copyright.qmd
-            - text: "Licensing"
+            - text: "Copyright and Licensing"
               href: docs/recommendations/licensing.qmd
 
     - id: docs-gr
@@ -70,9 +68,7 @@ website:
               href: docs-gr/key-concepts/what-to-expect.qmd
         - section: "Συστάσεις"
           contents:
-            - text: "Πνευματικά Δικαιώματα"
-              href: docs-gr/recommendations/copyright.qmd
-            - text: "Αδειοδότηση"
+            - text: "Πνευματικά Δικαιώματα και Αδειοδότηση"
               href: docs-gr/recommendations/licensing.qmd
 
   bread-crumbs: false
