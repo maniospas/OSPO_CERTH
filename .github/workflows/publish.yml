@@ -1,28 +1,36 @@
-on:
-  workflow_dispatch:
-  push:
-    branches: main
-
 name: Quarto Publish
 
+on:
+  push:
+    branches: main
+  pull_request:
+
 jobs:
-  build-deploy:
+  render:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up conda environment
-        run: |
-          conda env create -f environment.yml
-          conda activate ospo-certh
-          echo "CONDA_DEFAULT_ENV=ospo-certh" >> "$GITHUB_ENV"
-          echo "CONDA_PREFIX=$CONDA/envs/ospo-certh" >> "$GITHUB_ENV"
-          echo "$CONDA/envs/ospo-certh/bin" >> "$GITHUB_PATH"
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: environment.yml
+          activate-environment: ospo-certh
+          auto-activate-base: false
 
-      - name: Render and Publish
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.5.57
+
+      - name: Render
+        shell: bash -l {0}
+        run: |
+          conda activate myenv
+          quarto render
+
+      - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
