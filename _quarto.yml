@@ -1,5 +1,10 @@
 project:
   type: website
+  resources:
+    - "*.html"
+    - "*.css"
+  post-render:
+    - docs/project/add_catalogue_to_software.py
 
 website:
   title: "Open Source Program Office | CERTH"
@@ -10,6 +15,8 @@ website:
         text: Home
       - href: docs/index.qmd
         text: Technical Documentation
+      - href: docs/project/software-en.qmd
+        text: Software
       - href: contact.qmd
         text: Contact
 
@@ -43,10 +50,6 @@ website:
               href: docs/recommendations/copyright.qmd
             - text: "Licensing"
               href: docs/recommendations/licensing.qmd
-        - section: "Project"
-          contents:
-            - text: "Overview"
-              href: docs/project/index.qmd
 
     - id: docs-gr
       title: "Τεχνική Τεκμηρίωση"
@@ -71,10 +74,6 @@ website:
               href: docs-gr/recommendations/copyright.qmd
             - text: "Αδειοδότηση"
               href: docs-gr/recommendations/licensing.qmd
-        - section: "Έργο"
-          contents:
-            - text: "Επισκόπηση"
-              href: docs-gr/project/index.qmd
 
   bread-crumbs: false
 

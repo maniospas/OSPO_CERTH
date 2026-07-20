@@ -19,3 +19,5 @@ conda activate ospo-certh
 |---|---|
 | `quarto preview` | Start a live-reloading local server at `http://localhost:4848` |
 | `quarto render` | Build the static site into `_site/` |
+
+*There will be a small delay in preview mode while the catalogue is being rebuilt between refreshes. While testing, and to avoid github rate limits, commne out the line `"builder.tools.github.get_stars",` in `docs/project/add_catalogue_to_software.py`.*
